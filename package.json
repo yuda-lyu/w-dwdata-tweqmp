@@ -1,0 +1,37 @@
+{
+  "name": "w-dwdata-tweqmp",
+  "version": "1.0.0",
+  "main": "dist/w-dwdata-tweqmp.umd.js",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "lodash-es": "^4.17.21",
+    "w-dwdata-builder": "^1.0.1",
+    "w-ftp": "^1.0.16",
+    "w-gis": "^1.0.75",
+    "wsemi": "^1.8.18"
+  },
+  "devDependencies": {
+    "w-package-tools": "^1.1.2"
+  },
+  "scripts": {
+    "test": "mocha --parallel --timeout 60000",
+    "deploy": "gh-pages -d docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuda-lyu/w-dwdata-tweqmp.git"
+  },
+  "keywords": [
+    "package",
+    "tool",
+    "download",
+    "data",
+    "tw",
+    "eq",
+    "ml",
+    "pga",
+    "nodejs"
+  ],
+  "author": "yuda-lyu(semisphere)",
+  "license": "MIT"
+}
