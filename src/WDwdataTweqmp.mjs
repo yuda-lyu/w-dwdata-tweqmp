@@ -39,6 +39,7 @@ import fsCopyFolder from 'wsemi/src/fsCopyFolder.mjs'
  * @param {String} [opt.fdDwCurrent] 輸入已下載供比對hash用之數據資料夾字串，預設'./_dwCurrent'
  * @param {String} [opt.fdResult] 輸入已下載數據所連動生成數據資料夾字串，預設'./_result'
  * @param {String} [opt.fdTaskCpSrc] 輸入任務狀態之來源端資料夾字串，預設'./_taskCpSrc'
+ * @param {String} [opt.fdLog] 輸入儲存log資料夾字串，預設'./_logs'
  * @param {Function} [opt.funDownloadEqs] 輸入自定義下載地震數據函數，回傳資料陣列
  * @param {Function} [opt.funDownload] 輸入自定義當前下載之hash數據處理函數，回傳資料陣列
  * @param {Function} [opt.funGetCurrent] 輸入自定義已下載之hash數據處理函數，回傳資料陣列
@@ -180,6 +181,15 @@ let WDwdataTweqmp = async(st, opt = {}) => {
     }
     if (!fsIsFolder(fdTaskCpSrc)) {
         fsCreateFolder(fdTaskCpSrc)
+    }
+
+    //fdLog
+    let fdLog = get(opt, 'fdLog')
+    if (!isestr(fdLog)) {
+        fdLog = './_logs'
+    }
+    if (!fsIsFolder(fdLog)) {
+        fsCreateFolder(fdLog)
     }
 
     //funDownloadEqs
@@ -400,6 +410,7 @@ let WDwdataTweqmp = async(st, opt = {}) => {
         fdDwCurrent,
         fdResult,
         fdTaskCpSrc,
+        fdLog,
         funDownload,
         funGetCurrent,
         funRemove,
