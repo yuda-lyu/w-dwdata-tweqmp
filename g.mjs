@@ -5,9 +5,15 @@ import w from 'wsemi'
 import WDwdataTweqmp from './src/WDwdataTweqmp.mjs'
 
 
-let j = fs.readFileSync('../_data/settings.json', 'utf8')
-let st = JSON.parse(j)
-let token = _.get(st, 'token')
+// let j = fs.readFileSync('../_data/settings.json', 'utf8')
+// let st = JSON.parse(j)
+let st = {
+    'hostname': '{hostname}',
+    'port': 21,
+    'username': '{username}',
+    'password': '{password}',
+    'fdIni': './'
+}
 
 //fdDwStorageTxtTemp
 let fdDwStorageTxtTemp = `./_dwStorageTxtTemp`
@@ -47,7 +53,7 @@ let opt = {
     // funAdd,
     // funModify,
 }
-let ev = await WDwdataTweqmp(token, opt)
+let ev = await WDwdataTweqmp(st, opt)
     .catch((err) => {
         console.log(err)
     })
