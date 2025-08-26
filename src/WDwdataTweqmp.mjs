@@ -217,7 +217,7 @@ let WDwdataTweqmp = async(st, opt = {}) => {
         fsCleanFolder(fd)
 
         //readFileSync
-        let fpSrc = `${fdDwStorage}/${v.id}` //v.id即為檔名
+        let fpSrc = `${fdDwStorage}/${v.id}` //v.id為數據檔名
         let c = fs.readFileSync(fpSrc, 'utf8')
 
         //parseData
@@ -242,7 +242,7 @@ let WDwdataTweqmp = async(st, opt = {}) => {
         fsCleanFolder(fd)
 
         //readFileSync
-        let fpSrc = `${fdDwStorage}/${v.id}` //v.id即為檔名
+        let fpSrc = `${fdDwStorage}/${v.id}` //v.id為數據檔名
         let c = fs.readFileSync(fpSrc, 'utf8')
 
         //parseData
