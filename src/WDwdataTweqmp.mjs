@@ -1,24 +1,14 @@
 import fs from 'fs'
 import get from 'lodash-es/get.js'
-import each from 'lodash-es/each.js'
-import map from 'lodash-es/map.js'
-import values from 'lodash-es/values.js'
 import isestr from 'wsemi/src/isestr.mjs'
+import isbol from 'wsemi/src/isbol.mjs'
 import isfun from 'wsemi/src/isfun.mjs'
-import ispm from 'wsemi/src/ispm.mjs'
-import haskey from 'wsemi/src/haskey.mjs'
-import pmSeries from 'wsemi/src/pmSeries.mjs'
 import fsIsFolder from 'wsemi/src/fsIsFolder.mjs'
-import fsCopyFile from 'wsemi/src/fsCopyFile.mjs'
 import fsCleanFolder from 'wsemi/src/fsCleanFolder.mjs'
 import fsCreateFolder from 'wsemi/src/fsCreateFolder.mjs'
 import fsDeleteFolder from 'wsemi/src/fsDeleteFolder.mjs'
-import fsTreeFolder from 'wsemi/src/fsTreeFolder.mjs'
-import fsGetFileXxHash from 'wsemi/src/fsGetFileXxHash.mjs'
-import WDwdataBuilder from 'w-dwdata-builder/src/WDwdataBuilder.mjs'
-import downloadFiles from './downloadFiles.mjs'
+import WDwdataFtp from 'w-dwdata-ftp/src/WDwdataFtp.mjs'
 import parseData from './parseData.mjs'
-import fsCopyFolder from 'wsemi/src/fsCopyFolder.mjs'
 
 
 /**
@@ -32,25 +22,21 @@ import fsCopyFolder from 'wsemi/src/fsCopyFolder.mjs'
  * @param {String} [st.password=''] 輸入密碼字串，預設''
  * @param {String} [st.fdIni='./'] 輸入同步資料夾字串，預設'./'
  * @param {Object} [opt={}] 輸入設定物件，預設{}
- * @param {String} [opt.fdDwStorageTxtTemp] 輸入單次下載txt存放資料夾字串，預設'./_dwStorageTxtTemp'
- * @param {String} [opt.fdDwStorageTxt] 輸入合併儲存txt資料夾字串，預設'./_dwStorageTxt'
- * @param {String} [opt.fdDwStorageJson] 輸入解析txt成為json後之存放資料夾字串，預設'./_dwStorageJson'
- * @param {String} [opt.fdDwAttime] 輸入當前下載供比對hash用之數據資料夾字串，預設'./_dwAttime'
- * @param {String} [opt.fdDwCurrent] 輸入已下載供比對hash用之數據資料夾字串，預設'./_dwCurrent'
- * @param {String} [opt.fdResult] 輸入已下載數據所連動生成數據資料夾字串，預設'./_result'
- * @param {String} [opt.fdTaskCpSrc] 輸入任務狀態之來源端資料夾字串，預設'./_taskCpSrc'
- * @param {String} [opt.fdLog] 輸入儲存log資料夾字串，預設'./_logs'
- * @param {Function} [opt.funDownloadEqs] 輸入自定義下載地震數據函數，回傳資料陣列
- * @param {Function} [opt.funDownload] 輸入自定義當前下載之hash數據處理函數，回傳資料陣列
- * @param {Function} [opt.funGetCurrent] 輸入自定義已下載之hash數據處理函數，回傳資料陣列
- * @param {Function} [opt.funAdd] 輸入當有新資料時，需要連動處理之函數
- * @param {Function} [opt.funModify] 輸入當有資料需更新時，需要連動處理之函數
- * @param {Function} [opt.funRemove] 輸入當有資料需刪除時，需要連動處理之函數
+ * @param {String} [opt.fdDwStorageTemp='./_dwStorageTemp'] 輸入單次下載檔案存放資料夾字串，預設'./_dwStorageTemp'
+ * @param {String} [opt.fdDwStorage='./_dwStorage'] 輸入合併儲存檔案資料夾字串，預設'./_dwStorage'
+ * @param {String} [opt.fdDwAttime='./_dwAttime'] 輸入當前下載供比對hash用之數據資料夾字串，預設'./_dwAttime'
+ * @param {String} [opt.fdDwCurrent='./_dwCurrent'] 輸入已下載供比對hash用之數據資料夾字串，預設'./_dwCurrent'
+ * @param {String} [opt.fdResult='./_result'] 輸入已下載數據所連動生成數據資料夾字串，預設'./_result'
+ * @param {String} [opt.fdTaskCpSrc='./_taskCpSrc'] 輸入任務狀態之來源端資料夾字串，預設'./_taskCpSrc'
+ * @param {String} [opt.fdLog='./_logs'] 輸入儲存log資料夾字串，預設'./_logs'
+ * @param {Function} [opt.funDownload=null] 輸入自定義當前下載之hash數據處理函數，回傳資料陣列，預設null
+ * @param {Function} [opt.funGetCurrent=null] 輸入自定義已下載之hash數據處理函數，回傳資料陣列，預設null
+ * @param {Function} [opt.funAdd=null] 輸入當有新資料時，需要連動處理之函數，預設null
+ * @param {Function} [opt.funModify=null] 輸入當有資料需更新時，需要連動處理之函數，預設null
+ * @param {Function} [opt.funRemove=null] 輸入當有資料需刪除時，需要連動處理之函數，預設null
  * @returns {Object} 回傳事件物件，可呼叫函數on監聽change事件
  * @example
  *
- * import fs from 'fs'
- * import _ from 'lodash-es'
  * import w from 'wsemi'
  * import WDwdataTweqmp from './src/WDwdataTweqmp.mjs'
  *
@@ -62,17 +48,13 @@ import fsCopyFolder from 'wsemi/src/fsCopyFolder.mjs'
  *     'fdIni': './'
  * }
  *
- * //fdDwStorageTxtTemp
- * let fdDwStorageTxtTemp = `./_dwStorageTxtTemp`
- * w.fsCleanFolder(fdDwStorageTxtTemp)
+ * //fdDwStorageTemp
+ * let fdDwStorageTemp = `./_dwStorageTemp`
+ * w.fsCleanFolder(fdDwStorageTemp)
  *
- * //fdDwStorageTxt
- * let fdDwStorageTxt = `./_dwStorageTxt`
- * w.fsCleanFolder(fdDwStorageTxt)
- *
- * //fdDwStorageJson
- * let fdDwStorageJson = `./_dwStorageJson`
- * w.fsCleanFolder(fdDwStorageJson)
+ * //fdDwStorage
+ * let fdDwStorage = `./_dwStorage`
+ * w.fsCleanFolder(fdDwStorage)
  *
  * //fdDwAttime
  * let fdDwAttime = `./_dwAttime`
@@ -87,13 +69,11 @@ import fsCopyFolder from 'wsemi/src/fsCopyFolder.mjs'
  * w.fsCleanFolder(fdResult)
  *
  * let opt = {
- *     fdDwStorageTxtTemp,
- *     fdDwStorageTxt,
- *     fdDwStorageJson,
+ *     fdDwStorageTemp,
+ *     fdDwStorage,
  *     fdDwAttime,
  *     fdDwCurrent,
  *     fdResult,
- *     // funDownloadEqs,
  *     // funDownload,
  *     // funGetCurrent,
  *     // funRemove,
@@ -115,40 +95,43 @@ import fsCopyFolder from 'wsemi/src/fsCopyFolder.mjs'
  * // change { event: 'proc-callfun-getCurrent', msg: 'done' }
  * // change { event: 'compare', msg: 'start...' }
  * // change { event: 'compare', msg: 'done' }
- * // change { event: 'proc-add-callfun-add', id: '20220101000000', msg: 'start...' }
- * // change { event: 'proc-add-callfun-add', id: '20220101000000', msg: 'done' }
- * // change { event: 'proc-add-callfun-add', id: '20220101010000', msg: 'start...' }
- * // change { event: 'proc-add-callfun-add', id: '20220101010000', msg: 'done' }
+ * // change { event: 'proc-add-callfun-add', id: '100000-townshipInt-All.txt', msg: 'start...' }
+ * // change { event: 'proc-add-callfun-add', id: '100000-townshipInt-All.txt', msg: 'done' }
+ * // change { event: 'proc-add-callfun-add', id: '100001-townshipInt-All.txt', msg: 'start...' }
+ * // change { event: 'proc-add-callfun-add', id: '100001-townshipInt-All.txt', msg: 'done' }
  * // ...
  *
  */
 let WDwdataTweqmp = async(st, opt = {}) => {
 
-    //fdDwStorageTxtTemp, 單次下載txt存放資料夾
-    let fdDwStorageTxtTemp = get(opt, 'fdDwStorageTxtTemp')
-    if (!isestr(fdDwStorageTxtTemp)) {
-        fdDwStorageTxtTemp = `./_dwStorageTxtTemp`
-    }
-    if (!fsIsFolder(fdDwStorageTxtTemp)) {
-        fsCreateFolder(fdDwStorageTxtTemp)
+    // //useExpandOnOldFiles
+    // let useExpandOnOldFiles = get(opt, 'useExpandOnOldFiles')
+    // if (!isbol(useExpandOnOldFiles)) {
+    //     useExpandOnOldFiles = false
+    // }
+
+    //useSimulateFiles, 供測試用, 檔案得預先給予至fdDwStorageTemp
+    let useSimulateFiles = get(opt, 'useSimulateFiles')
+    if (!isbol(useSimulateFiles)) {
+        useSimulateFiles = false
     }
 
-    //fdDwStorageTxt, 合併儲存txt資料夾
-    let fdDwStorageTxt = get(opt, 'fdDwStorageTxt')
-    if (!isestr(fdDwStorageTxt)) {
-        fdDwStorageTxt = `./_dwStorageTxt`
+    //fdDwStorageTemp, 單次下載檔案存放資料夾
+    let fdDwStorageTemp = get(opt, 'fdDwStorageTemp')
+    if (!isestr(fdDwStorageTemp)) {
+        fdDwStorageTemp = `./_dwStorageTemp`
     }
-    if (!fsIsFolder(fdDwStorageTxt)) {
-        fsCreateFolder(fdDwStorageTxt)
+    if (!fsIsFolder(fdDwStorageTemp)) {
+        fsCreateFolder(fdDwStorageTemp)
     }
 
-    //fdDwStorageJson, 解析txt成為json後之存放資料夾
-    let fdDwStorageJson = get(opt, 'fdDwStorageJson')
-    if (!isestr(fdDwStorageJson)) {
-        fdDwStorageJson = `./_dwStorageJson`
+    //fdDwStorage, 合併儲存檔案資料夾
+    let fdDwStorage = get(opt, 'fdDwStorage')
+    if (!isestr(fdDwStorage)) {
+        fdDwStorage = `./_dwStorage`
     }
-    if (!fsIsFolder(fdDwStorageJson)) {
-        fsCreateFolder(fdDwStorageJson)
+    if (!fsIsFolder(fdDwStorage)) {
+        fsCreateFolder(fdDwStorage)
     }
 
     //fdDwAttime
@@ -196,9 +179,6 @@ let WDwdataTweqmp = async(st, opt = {}) => {
         fsCreateFolder(fdLog)
     }
 
-    //funDownloadEqs
-    let funDownloadEqs = get(opt, 'funDownloadEqs')
-
     //funDownload
     let funDownload = get(opt, 'funDownload')
 
@@ -214,155 +194,10 @@ let WDwdataTweqmp = async(st, opt = {}) => {
     //funRemove
     let funRemove = get(opt, 'funRemove')
 
-    //treeFilesAndGetHashs
-    let treeFilesAndGetHashs = (fd) => {
-
-        //vfps
-        let vfps = fsTreeFolder(fd, 1)
-        // console.log('vfps', vfps)
-
-        //ltdtHash
-        let ltdtHash = []
-        each(vfps, (v) => {
-
-            let j = fs.readFileSync(v.path, 'utf8')
-            let o = JSON.parse(j)
-
-            ltdtHash.push(o)
-
-        })
-
-        return ltdtHash
-    }
-
-    //funDownloadDef
-    let funDownloadDef = async() => {
-
-        //eqs
-        let eqs = []
-        if (isfun(funDownloadEqs)) {
-            eqs = funDownloadEqs()
-            if (ispm(eqs)) {
-                eqs = await eqs
-            }
-        }
-        else {
-            let cs = await downloadFiles(st, fdDwStorageTxtTemp, fdDwStorageTxt)
-            eqs = map(cs, (c) => {
-                let eq = parseData(c)
-                return eq
-            })
-            // console.log('eqs', eqs, size(eqs))
-            // eqs = [eqs[0], eqs[1]]
-            // fs.writeFileSync('./temp.json', JSON.stringify(eqs, null, 2), 'utf8')
-        }
-
-        // //reverse
-        // eqs = reverse(eqs) //依照檔名排序故為按時間排, 不用reverse
-
-        //清空fdDwAttime
-        fsCleanFolder(fdDwAttime)
-
-        //複製已下載供比對hash用數據fdDwCurrent至fdDwAttime
-        fsCopyFolder(fdDwCurrent, fdDwAttime)
-
-        //ltdtHashOld, 數據來源為fdDwCurrent, 故為舊hash數據清單
-        let ltdtHashOld = treeFilesAndGetHashs(fdDwAttime)
-
-        //kpHash, 基於舊hash數據建構字典物件
-        let kpHash = {}
-        each(ltdtHashOld, (v) => {
-            kpHash[v.id] = v
-        })
-
-        //逐筆偵測與更新
-        await pmSeries(eqs, async(v) => {
-
-            //先儲存解析後json數據至存放完整數據資料夾fdDwStorageJson
-            let fp = `${fdDwStorageJson}/${v.id}.json`
-            fs.writeFileSync(fp, JSON.stringify(v), 'utf8')
-
-            //計算檔案hash值, 為新hash
-            let hashNew = await fsGetFileXxHash(fp)
-
-            //check
-            if (haskey(kpHash, v.id)) {
-                //為已下載過之地震數據
-
-                //舊hash
-                let hashOld = kpHash[v.id].hash
-
-                //check
-                if (hashNew !== hashOld) {
-
-                    //update
-                    kpHash[v.id].hash = hashNew
-
-                    //儲存更新後之新地震hash數據檔案
-                    let fp = `${fdDwAttime}/${v.id}.json`
-                    fs.writeFileSync(fp, JSON.stringify(kpHash[v.id]), 'utf8')
-
-                }
-                else {
-                    //不用更新hash檔案
-                }
-
-            }
-            else {
-                //為新增之地震數據
-
-                //add
-                kpHash[v.id] = {
-                    id: v.id,
-                    hash: hashNew,
-                }
-
-                //儲存新地震hash數據檔案
-                let fp = `${fdDwAttime}/${v.id}.json`
-                fs.writeFileSync(fp, JSON.stringify(kpHash[v.id]), 'utf8')
-
-            }
-
-        })
-
-        //ltdtHashNew
-        let ltdtHashNew = values(kpHash)
-
-        return ltdtHashNew
-    }
-    if (!isfun(funDownload)) {
-        funDownload = funDownloadDef
-    }
-
-    //funGetCurrentDef
-    let funGetCurrentDef = async() => {
-
-        //vfps
-        let vfps = fsTreeFolder(fdDwCurrent, 1)
-        // console.log('vfps', vfps)
-
-        //ltdtHashOld
-        let ltdtHashOld = []
-        each(vfps, (v) => {
-
-            let j = fs.readFileSync(v.path, 'utf8')
-            let eq = JSON.parse(j)
-
-            ltdtHashOld.push(eq)
-
-        })
-
-        return ltdtHashOld
-    }
-    if (!isfun(funGetCurrent)) {
-        funGetCurrent = funGetCurrentDef
-    }
-
     //funRemoveDef
     let funRemoveDef = async(v) => {
 
         let fd = `${fdResult}/${v.id}`
-
         if (fsIsFolder(fd)) {
             fsDeleteFolder(fd)
         }
@@ -375,15 +210,22 @@ let WDwdataTweqmp = async(st, opt = {}) => {
     //funAddDef
     let funAddDef = async(v) => {
 
-        let fd = `${fdResult}/${v.id}`
-
-        if (fsIsFolder(fd)) {
-            fsCleanFolder(fd)
+        let fd = `${fdResult}/${v.id}` //使用v.id做為資料夾名
+        if (!fsIsFolder(fd)) {
+            fsCreateFolder(fd)
         }
+        fsCleanFolder(fd)
 
-        let fpStorage = `${fdDwStorageJson}/${v.id}.json`
-        let fpResult = `${fd}/${v.id}.json`
-        fsCopyFile(fpStorage, fpResult)
+        //readFileSync
+        let fpSrc = `${fdDwStorage}/${v.id}` //v.id即為檔名
+        let c = fs.readFileSync(fpSrc, 'utf8')
+
+        //parseData
+        let eq = parseData(c)
+
+        //writeFileSync
+        let fpTar = `${fd}/${eq.id}.json` //使用eq.id做為檔名
+        fs.writeFileSync(fpTar, JSON.stringify(eq), 'utf8')
 
     }
     if (!isfun(funAdd)) {
@@ -393,23 +235,34 @@ let WDwdataTweqmp = async(st, opt = {}) => {
     //funModifyDef
     let funModifyDef = async(v) => {
 
-        let fd = `${fdResult}/${v.id}`
-
-        if (fsIsFolder(fd)) {
-            fsCleanFolder(fd)
+        let fd = `${fdResult}/${v.id}` //使用v.id做為資料夾名
+        if (!fsIsFolder(fd)) {
+            fsCreateFolder(fd)
         }
+        fsCleanFolder(fd)
 
-        let fpStorage = `${fdDwStorageJson}/${v.id}.json`
-        let fpResult = `${fd}/${v.id}.json`
-        fsCopyFile(fpStorage, fpResult)
+        //readFileSync
+        let fpSrc = `${fdDwStorage}/${v.id}` //v.id即為檔名
+        let c = fs.readFileSync(fpSrc, 'utf8')
+
+        //parseData
+        let eq = parseData(c)
+
+        //writeFileSync
+        let fpTar = `${fd}/${eq.id}.json` //使用eq.id做為檔名
+        fs.writeFileSync(fpTar, JSON.stringify(eq), 'utf8')
 
     }
     if (!isfun(funModify)) {
         funModify = funModifyDef
     }
 
-    //WDwdataBuilder
-    let optBdr = {
+    //WDwdataFtp
+    let optFtp = {
+        useSimulateFiles,
+        useExpandOnOldFiles: true, //為增量檔案
+        fdDwStorageTemp,
+        fdDwStorage,
         fdDwAttime,
         fdDwCurrent,
         fdResult,
@@ -421,7 +274,7 @@ let WDwdataTweqmp = async(st, opt = {}) => {
         funAdd,
         funModify,
     }
-    let ev = await WDwdataBuilder(optBdr)
+    let ev = await WDwdataFtp(st, optFtp)
 
     return ev
 }

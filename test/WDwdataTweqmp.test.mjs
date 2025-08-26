@@ -3,7 +3,6 @@ import _ from 'lodash-es'
 import w from 'wsemi'
 import assert from 'assert'
 import WDwdataTweqmp from '../src/WDwdataTweqmp.mjs'
-import parseData from '../src/parseData.mjs'
 
 
 describe('WDwdataTweqmp', function() {
@@ -14,21 +13,18 @@ describe('WDwdataTweqmp', function() {
 
         let ms = []
 
-        let j = fs.readFileSync('../_data/settings.json', 'utf8')
-        let st = JSON.parse(j)
-        let token = _.get(st, 'token')
+        let st = {} //開啟useSimulateFiles=true直接模擬ftp下載數據
 
-        //fdDwStorageTxtTemp
-        let fdDwStorageTxtTemp = `./_dwStorageTxtTemp`
-        w.fsCleanFolder(fdDwStorageTxtTemp)
+        //fdDwStorageTemp
+        let fdDwStorageTemp = `./_dwStorageTemp`
+        w.fsCleanFolder(fdDwStorageTemp)
 
-        //fdDwStorageTxt
-        let fdDwStorageTxt = `./_dwStorageTxt`
-        w.fsCleanFolder(fdDwStorageTxt)
+        w.fsCopyFile(`./test/100000-townshipInt-All.txt`, `${fdDwStorageTemp}/100000-townshipInt-All.txt`)
+        w.fsCopyFile(`./test/100001-townshipInt-All.txt`, `${fdDwStorageTemp}/100001-townshipInt-All.txt`)
 
-        //fdDwStorageJson
-        let fdDwStorageJson = `./_dwStorageJson`
-        w.fsCleanFolder(fdDwStorageJson)
+        //fdDwStorage
+        let fdDwStorage = `./_dwStorage`
+        w.fsCleanFolder(fdDwStorage)
 
         //fdDwAttime
         let fdDwAttime = `./_dwAttime`
@@ -42,35 +38,20 @@ describe('WDwdataTweqmp', function() {
         let fdResult = './_result'
         w.fsCleanFolder(fdResult)
 
-        //funDownloadEqs
-        let funDownloadEqs = async() => {
-            let c
-            let eq
-            let eqs = []
-            c = fs.readFileSync(`./test/100000-townshipInt-All.txt`, 'utf8')
-            eq = parseData(c)
-            eqs.push(eq)
-            c = fs.readFileSync(`./test/100001-townshipInt-All.txt`, 'utf8')
-            eq = parseData(c)
-            eqs.push(eq)
-            return eqs
-        }
-
         let opt = {
-            fdDwStorageTxtTemp,
-            fdDwStorageTxt,
-            fdDwStorageJson,
+            useSimulateFiles: true, //模擬ftp下載數據
+            fdDwStorageTemp,
+            fdDwStorage,
             fdDwAttime,
             fdDwCurrent,
             fdResult,
-            funDownloadEqs,
             // funDownload,
             // funGetCurrent,
             // funRemove,
             // funAdd,
             // funModify,
         }
-        let ev = await WDwdataTweqmp(token, opt)
+        let ev = await WDwdataTweqmp(st, opt)
             .catch((err) => {
                 console.log(err)
             })
@@ -93,10 +74,10 @@ describe('WDwdataTweqmp', function() {
         // change { event: 'proc-callfun-getCurrent', msg: 'done' }
         // change { event: 'compare', msg: 'start...' }
         // change { event: 'compare', msg: 'done' }
-        // change { event: 'proc-add-callfun-add', id: '20220101000000', msg: 'start...' }
-        // change { event: 'proc-add-callfun-add', id: '20220101000000', msg: 'done' }
-        // change { event: 'proc-add-callfun-add', id: '20220101010000', msg: 'start...' }
-        // change { event: 'proc-add-callfun-add', id: '20220101010000', msg: 'done' }
+        // change { event: 'proc-add-callfun-add', id: '100000-townshipInt-All.txt', msg: 'start...' }
+        // change { event: 'proc-add-callfun-add', id: '100000-townshipInt-All.txt', msg: 'done' }
+        // change { event: 'proc-add-callfun-add', id: '100001-townshipInt-All.txt', msg: 'start...' }
+        // change { event: 'proc-add-callfun-add', id: '100001-townshipInt-All.txt', msg: 'done' }
         // ...
 
         return pm
@@ -111,16 +92,16 @@ describe('WDwdataTweqmp', function() {
         { event: 'compare', msg: 'done' },
         {
             event: 'proc-add-callfun-add',
-            id: '20220101000000',
+            id: '100000-townshipInt-All.txt',
             msg: 'start...'
         },
-        { event: 'proc-add-callfun-add', id: '20220101000000', msg: 'done' },
+        { event: 'proc-add-callfun-add', id: '100000-townshipInt-All.txt', msg: 'done' },
         {
             event: 'proc-add-callfun-add',
-            id: '20220101010000',
+            id: '100001-townshipInt-All.txt',
             msg: 'start...'
         },
-        { event: 'proc-add-callfun-add', id: '20220101010000', msg: 'done' },
+        { event: 'proc-add-callfun-add', id: '100001-townshipInt-All.txt', msg: 'done' },
         { event: 'end', msg: 'done' }
     ]
 

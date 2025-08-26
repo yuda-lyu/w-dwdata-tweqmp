@@ -1,0 +1,381 @@
+全國>> 震度顯示>>
+觀測時間：2021-12-31 16:00:00
+觀測長度(秒)：50
+臺北市 >>                                                                                        
+Staname=  北投區,Stacode=A002,Stalon=121.467,Stalat=25.126,震度0級,PGA(V)= 313.0,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  士林區,Stacode=A006,Stalon=121.515,Stalat=25.094,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大同區,Stacode=A007,Stalon=121.517,Stalat=25.073,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  內湖區,Stacode=A009,Stalon=121.580,Stalat=25.080,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  中山區,Stacode=A013,Stalon=121.534,Stalat=25.056,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  松山區,Stacode=A014,Stalon=121.552,Stalat=25.056,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大安區,Stacode=A020,Stalon=121.534,Stalat=25.038,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  萬華區,Stacode=A025,Stalon=121.498,Stalat=25.023,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  文山區,Stacode=A030,Stalon=121.539,Stalat=24.998,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  南港區,Stacode=A131,Stalon=121.610,Stalat=25.058,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  信義區,Stacode= NHY,Stalon=121.569,Stalat=25.041,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  中正區,Stacode= TAP,Stalon=121.514,Stalat=25.038,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+高雄市 >>
+Staname=  鳳山區,Stacode=D008,Stalon=120.376,Stalat=22.628,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  路竹區,Stacode=D009,Stalon=120.264,Stalat=22.867,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  梓官區,Stacode=D011,Stalon=120.264,Stalat=22.760,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  田寮區,Stacode=D012,Stalon=120.379,Stalat=22.877,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  燕巢區,Stacode=D013,Stalon=120.366,Stalat=22.795,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  仁武區,Stacode=D014,Stalon=120.349,Stalat=22.701,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  鳥松區,Stacode=D015,Stalon=120.341,Stalat=22.654,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  林園區,Stacode=D017,Stalon=120.393,Stalat=22.507,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  美濃區,Stacode=D020,Stalon=120.544,Stalat=22.900,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=那瑪夏區,Stacode=D054,Stalon=120.721,Stalat=23.276,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  前金區,Stacode=D062,Stalon=120.293,Stalat=22.622,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  茄萣區,Stacode=D063,Stalon=120.183,Stalat=22.904,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  彌陀區,Stacode=D064,Stalon=120.248,Stalat=22.783,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  橋頭區,Stacode=D065,Stalon=120.311,Stalat=22.750,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大社區,Stacode=D066,Stalon=120.346,Stalat=22.730,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大樹區,Stacode=D067,Stalon=120.423,Stalat=22.656,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  杉林區,Stacode=D068,Stalon=120.545,Stalat=22.976,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  茂林區,Stacode=D069,Stalon=120.665,Stalat=22.886,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  阿蓮區,Stacode=D085,Stalon=120.580,Stalat=23.960,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  岡山區,Stacode=D086,Stalon=120.303,Stalat=22.793,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  三民區,Stacode=D088,Stalon=120.319,Stalat=22.644,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大寮區,Stacode=D090,Stalon=120.416,Stalat=22.590,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  新興區,Stacode=D103,Stalon=120.305,Stalat=22.627,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  左營區,Stacode=D104,Stalon=120.293,Stalat=22.690,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  內門區,Stacode=D105,Stalon=120.460,Stalat=22.939,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  苓雅區,Stacode=D106,Stalon=120.313,Stalat=22.623,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  鹽埕區,Stacode=D107,Stalon=120.282,Stalat=22.624,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  永安區,Stacode=D108,Stalon=120.224,Stalat=22.814,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  湖內區,Stacode=D109,Stalon=120.199,Stalat=22.911,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  旗津區,Stacode=D110,Stalon=120.272,Stalat=22.608,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  小港區,Stacode=D116,Stalon=120.350,Stalat=22.581,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  前鎮區,Stacode= KAU,Stalon=120.580,Stalat=23.960,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  旗山區,Stacode= SCS,Stalon=120.494,Stalat=22.885,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  甲仙區,Stacode= SGS,Stalon=120.591,Stalat=23.080,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  六龜區,Stacode= SLG,Stalon=120.646,Stalat=22.993,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  楠梓區,Stacode= SNJ,Stalon=120.335,Stalat=22.753,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  桃源區,Stacode= STY,Stalon=120.766,Stalat=23.161,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  鼓山區,Stacode= WSS,Stalon=120.262,Stalat=22.642,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+基隆市 >>
+Staname=  七堵區,Stacode=A057,Stalon=121.694,Stalat=25.080,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  安樂區,Stacode=A059,Stalon=121.694,Stalat=25.156,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  中山區,Stacode=A060,Stalon=121.730,Stalat=25.155,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  信義區,Stacode=A061,Stalon=120.580,Stalat=23.960,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  暖暖區,Stacode=A063,Stalon=120.580,Stalat=23.960,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  仁愛區,Stacode=A107,Stalon=121.741,Stalat=25.133,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  中正區,Stacode= NOU,Stalon=121.773,Stalat=25.149,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+新北市 >>
+Staname=  蘆洲區,Stacode=A003,Stalon=121.457,Stalat=25.086,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  三重區,Stacode=A010,Stalon=121.478,Stalat=25.065,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  泰山區,Stacode=A016,Stalon=121.431,Stalat=25.062,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  板橋區,Stacode=A024,Stalon=121.475,Stalat=25.019,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  永和區,Stacode=A026,Stalon=121.511,Stalat=25.016,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  中和區,Stacode=A032,Stalon=121.483,Stalat=25.000,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  新店區,Stacode=A034,Stalon=121.539,Stalat=24.954,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  新莊區,Stacode=A038,Stalon=121.419,Stalat=25.022,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  三峽區,Stacode=A039,Stalon=121.369,Stalat=24.935,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  樹林區,Stacode=A043,Stalon=121.418,Stalat=24.990,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  瑞芳區,Stacode=A046,Stalon=121.777,Stalat=25.102,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  鶯歌區,Stacode=A047,Stalon=121.345,Stalat=24.952,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  八里區,Stacode=A049,Stalon=121.445,Stalat=25.147,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  五股區,Stacode=A051,Stalon=121.449,Stalat=25.100,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  林口區,Stacode=A052,Stalon=121.390,Stalat=25.080,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  深坑區,Stacode=A071,Stalon=121.617,Stalat=25.002,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  石碇區,Stacode=A072,Stalon=121.659,Stalat=24.991,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  平溪區,Stacode=A075,Stalon=121.737,Stalat=25.028,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  雙溪區,Stacode=A078,Stalon=120.580,Stalat=23.960,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  三芝區,Stacode=A083,Stalon=121.503,Stalat=25.258,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  金山區,Stacode=A084,Stalon=121.637,Stalat=25.223,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  坪林區,Stacode=A085,Stalon=121.712,Stalat=24.938,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  土城區,Stacode=A115,Stalon=121.465,Stalat=24.989,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  烏來區,Stacode=A124,Stalon=121.553,Stalat=24.864,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  汐止區,Stacode=A125,Stalon=121.655,Stalat=25.068,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  石門區,Stacode= NSM,Stalon=121.589,Stalat=25.288,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  淡水區,Stacode= NTS,Stalon=121.449,Stalat=25.164,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  萬里區,Stacode= NWR,Stalon=121.661,Stalat=25.202,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  貢寮區,Stacode=TWB1,Stalon=121.997,Stalat=25.007,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+桃園市 >>
+Staname=  觀音區,Stacode=B003,Stalon=121.143,Stalat=25.046,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大園區,Stacode=B004,Stalon=121.203,Stalat=25.060,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  楊梅區,Stacode=B006,Stalon=121.149,Stalat=24.910,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大溪區,Stacode=B011,Stalon=121.286,Stalat=24.884,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  八德區,Stacode=B012,Stalon=121.299,Stalat=24.936,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  龍潭區,Stacode=B013,Stalon=120.580,Stalat=23.960,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  龜山區,Stacode=B014,Stalon=121.315,Stalat=25.045,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  平鎮區,Stacode=B175,Stalon=121.204,Stalat=24.953,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  蘆竹區,Stacode=B176,Stalon=121.258,Stalat=25.025,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  中壢區,Stacode=NCUH,Stalon=120.580,Stalat=23.960,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  新屋區,Stacode= NHW,Stalon=121.048,Stalat=25.007,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  復興區,Stacode= NSK,Stalon=121.367,Stalat=24.674,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  桃園區,Stacode= NTY,Stalon=121.298,Stalat=25.000,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+新竹縣 >>
+Staname=  湖口鄉,Stacode=B018,Stalon=121.061,Stalat=24.879,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  新豐鄉,Stacode=B019,Stalon=120.987,Stalat=24.901,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  關西鎮,Stacode=B021,Stalon=121.174,Stalat=24.792,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  寶山鄉,Stacode=B022,Stalon=120.990,Stalat=24.767,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  橫山鄉,Stacode=B023,Stalon=121.140,Stalat=24.720,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  芎林鄉,Stacode=B026,Stalon=121.084,Stalat=24.774,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  新埔鎮,Stacode=B027,Stalon=121.075,Stalat=24.830,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  北埔鄉,Stacode=B028,Stalon=121.054,Stalat=24.700,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  峨眉鄉,Stacode=B095,Stalon=121.020,Stalat=24.689,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  尖石鄉,Stacode=H134,Stalon=121.303,Stalat=24.580,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  竹北市,Stacode= HSN,Stalon=121.014,Stalat=24.828,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  五峰鄉,Stacode= NFF,Stalon=121.118,Stalat=24.632,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  竹東鎮,Stacode= NJD,Stalon=121.088,Stalat=24.736,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+新竹市 >>
+Staname=    北區,Stacode=B016,Stalon=120.966,Stalat=24.814,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  香山區,Stacode=B097,Stalon=120.927,Stalat=24.788,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=    東區,Stacode=HSN1,Stalon=121.018,Stalat=24.779,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+苗栗縣 >>
+Staname=  西湖鄉,Stacode=B029,Stalon=120.758,Stalat=24.558,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  頭屋鄉,Stacode=B030,Stalon=120.885,Stalat=24.586,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  公館鄉,Stacode=B032,Stalon=120.823,Stalat=24.522,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  造橋鄉,Stacode=B034,Stalon=120.865,Stalat=24.638,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  後龍鎮,Stacode=B035,Stalon=120.797,Stalat=24.614,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  通霄鎮,Stacode=B037,Stalon=120.684,Stalat=24.492,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  銅鑼鄉,Stacode=B039,Stalon=120.791,Stalat=24.490,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  苑裡鎮,Stacode=B041,Stalon=120.696,Stalat=24.390,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  頭份市,Stacode=B043,Stalon=120.960,Stalat=24.687,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  獅潭鄉,Stacode=B045,Stalon=120.921,Stalat=24.540,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  三灣鄉,Stacode=B177,Stalon=120.955,Stalat=24.656,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  泰安鄉,Stacode=H176,Stalon=120.941,Stalat=24.465,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  卓蘭鎮,Stacode=H178,Stalon=120.866,Stalat=24.353,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  竹南鎮,Stacode= NJN,Stalon=120.870,Stalat=24.684,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  苗栗市,Stacode=NMLH,Stalon=120.791,Stalat=24.537,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  南庄鄉,Stacode= NST,Stalon=121.009,Stalat=24.630,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  三義鄉,Stacode= NSY,Stalon=120.770,Stalat=24.414,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大湖鄉,Stacode=TWQ1,Stalon=120.781,Stalat=24.346,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+臺中市 >>
+Staname=  西屯區,Stacode=B050,Stalon=120.642,Stalat=24.180,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=    西區,Stacode=B051,Stalon=120.660,Stalat=24.160,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  北屯區,Stacode=B053,Stalon=120.679,Stalat=24.193,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  南屯區,Stacode=B056,Stalon=120.634,Stalat=24.157,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  清水區,Stacode=B059,Stalon=120.572,Stalat=24.267,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大雅區,Stacode=B060,Stalon=120.650,Stalat=24.222,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大肚區,Stacode=B061,Stalon=120.557,Stalat=24.135,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大里區,Stacode=B062,Stalon=120.684,Stalat=24.115,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  烏日區,Stacode=B063,Stalon=120.624,Stalat=24.108,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  潭子區,Stacode=B066,Stalon=120.704,Stalat=24.214,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  石岡區,Stacode=B068,Stalon=120.773,Stalat=24.276,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  東勢區,Stacode=B069,Stalon=120.831,Stalat=24.260,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  龍井區,Stacode=B070,Stalon=120.547,Stalat=24.196,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=    東區,Stacode=B099,Stalon=120.699,Stalat=24.136,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  豐原區,Stacode=B102,Stalon=120.729,Stalat=24.247,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  后里區,Stacode=B103,Stalon=120.715,Stalat=24.307,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  沙鹿區,Stacode=B104,Stalon=120.609,Stalat=24.244,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  外埔區,Stacode=B135,Stalon=120.653,Stalat=24.333,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  神岡區,Stacode=B136,Stalon=120.660,Stalat=24.258,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  梧棲區,Stacode=B149,Stalon=120.523,Stalat=24.257,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  太平區,Stacode=B170,Stalon=120.720,Stalat=24.155,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大安區,Stacode=B171,Stalon=120.588,Stalat=24.345,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=    中區,Stacode=B172,Stalon=120.682,Stalat=24.144,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=    南區,Stacode=B173,Stalon=120.656,Stalat=24.111,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  新社區,Stacode=B174,Stalon=120.806,Stalat=24.227,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  和平區,Stacode=FUSS,Stalon=121.244,Stalat=24.248,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=    北區,Stacode= TCU,Stalon=120.684,Stalat=24.146,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大甲區,Stacode= WDJ,Stalon=120.640,Stalat=24.348,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  霧峰區,Stacode= WWF,Stalon=120.580,Stalat=23.960,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+南投縣 >>
+Staname=  草屯鎮,Stacode=B071,Stalon=120.795,Stalat=23.984,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  集集鎮,Stacode=B077,Stalon=120.787,Stalat=23.827,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  水里鄉,Stacode=B078,Stalon=120.854,Stalat=23.810,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  中寮鄉,Stacode=B143,Stalon=120.763,Stalat=23.880,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  鹿谷鄉,Stacode=B184,Stalon=120.753,Stalat=23.749,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  仁愛鄉,Stacode= OWD,Stalon=121.176,Stalat=23.954,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  魚池鄉,Stacode= SML,Stalon=120.908,Stalat=23.881,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  國姓鄉,Stacode= WCS,Stalon=120.912,Stalat=24.057,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  信義鄉,Stacode= WHY,Stalon=120.853,Stalat=23.696,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  竹山鎮,Stacode= WJS,Stalon=120.728,Stalat=23.822,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  名間鄉,Stacode= WNT,Stalon=120.692,Stalat=23.877,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  南投市,Stacode=WNT1,Stalon=120.680,Stalat=23.907,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  埔里鎮,Stacode= WPL,Stalon=120.957,Stalat=24.012,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+彰化縣 >>
+Staname=  和美鎮,Stacode=B111,Stalon=120.495,Stalat=24.112,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  鹿港鎮,Stacode=B112,Stalon=120.430,Stalat=24.055,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  溪湖鎮,Stacode=B115,Stalon=120.478,Stalat=23.958,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  田中鎮,Stacode=B116,Stalon=120.589,Stalat=23.856,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  線西鄉,Stacode=B117,Stalon=120.468,Stalat=24.132,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  埔鹽鄉,Stacode=B118,Stalon=120.431,Stalat=24.000,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  芬園鄉,Stacode=B120,Stalon=120.621,Stalat=23.977,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  埤頭鄉,Stacode=B121,Stalon=120.459,Stalat=23.895,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  二水鄉,Stacode=B122,Stalon=120.618,Stalat=23.812,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  花壇鄉,Stacode=B123,Stalon=120.552,Stalat=24.016,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  社頭鄉,Stacode=B138,Stalon=120.603,Stalat=23.921,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  永靖鄉,Stacode=B139,Stalon=120.548,Stalat=23.921,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  溪州鄉,Stacode=B141,Stalon=120.471,Stalat=23.832,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  芳苑鄉,Stacode=B145,Stalon=120.344,Stalat=23.979,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  伸港鄉,Stacode=B216,Stalon=120.496,Stalat=24.146,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  北斗鎮,Stacode=B162,Stalon=120.521,Stalat=23.876,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  福興鄉,Stacode=B178,Stalon=120.412,Stalat=24.028,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  秀水鄉,Stacode=B179,Stalon=120.504,Stalat=24.034,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大村鄉,Stacode=B180,Stalon=120.546,Stalat=23.993,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  埔心鄉,Stacode=B181,Stalon=120.546,Stalat=23.954,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  田尾鄉,Stacode=B182,Stalon=120.527,Stalat=23.892,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  竹塘鄉,Stacode=B183,Stalon=120.416,Stalat=23.876,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  彰化市,Stacode=WCHH,Stalon=120.558,Stalat=24.079,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  二林鎮,Stacode= WRL,Stalon=120.378,Stalat=23.903,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大城鄉,Stacode= WTC,Stalon=120.289,Stalat=23.862,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  員林市,Stacode= WYL,Stalon=120.580,Stalat=23.960,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+雲林縣 >>
+Staname=  東勢鄉,Stacode=C001,Stalon=120.249,Stalat=23.705,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  虎尾鎮,Stacode=C002,Stalon=120.420,Stalat=23.717,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  口湖鄉,Stacode=C004,Stalon=120.179,Stalat=23.600,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  林內鄉,Stacode=C024,Stalon=120.616,Stalat=23.755,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  莿桐鄉,Stacode=C025,Stalon=120.523,Stalat=23.777,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  二崙鄉,Stacode=C026,Stalon=120.419,Stalat=23.797,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  麥寮鄉,Stacode=C027,Stalon=120.254,Stalat=23.751,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  北港鎮,Stacode=C032,Stalon=120.302,Stalat=23.577,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  褒忠鄉,Stacode=C082,Stalon=120.308,Stalat=23.723,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  西螺鎮,Stacode=C092,Stalon=120.486,Stalat=23.789,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  崙背鄉,Stacode=C094,Stalon=120.331,Stalat=23.792,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  斗南鎮,Stacode=C104,Stalon=120.475,Stalat=23.667,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  臺西鄉,Stacode=C112,Stalon=120.191,Stalat=23.701,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  元長鄉,Stacode=C138,Stalon=120.317,Stalat=23.645,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大埤鄉,Stacode=C139,Stalon=120.431,Stalat=23.644,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  斗六市,Stacode= WDL,Stalon=120.539,Stalat=23.715,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  古坑鄉,Stacode= WGK,Stalon=120.570,Stalat=23.684,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  四湖鄉,Stacode= WSF,Stalon=120.230,Stalat=23.636,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  水林鄉,Stacode= WSL,Stalon=120.228,Stalat=23.523,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  土庫鎮,Stacode= WTK,Stalon=120.389,Stalat=23.688,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+嘉義縣 >>
+Staname=阿里山鄉,Stacode= ALS,Stalon=120.813,Stalat=23.508,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大林鎮,Stacode=C005,Stalon=120.422,Stalat=23.610,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  梅山鄉,Stacode=C006,Stalon=120.560,Stalat=23.580,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  朴子市,Stacode=C008,Stalon=120.278,Stalat=23.484,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  布袋鎮,Stacode=C012,Stalon=120.160,Stalat=23.330,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  竹崎鄉,Stacode=C035,Stalon=120.592,Stalat=23.519,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  鹿草鄉,Stacode=C043,Stalon=120.336,Stalat=23.405,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  中埔鄉,Stacode=C087,Stalon=120.530,Stalat=23.382,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  太保市,Stacode=C095,Stalon=120.331,Stalat=23.455,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  新港鄉,Stacode=C105,Stalon=120.345,Stalat=23.555,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  水上鄉,Stacode=C106,Stalon=120.415,Stalat=23.436,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  六腳鄉,Stacode=C123,Stalon=120.240,Stalat=23.484,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  溪口鄉,Stacode=C144,Stalon=120.394,Stalat=23.605,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  東石鄉,Stacode=C145,Stalon=120.153,Stalat=23.461,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  民雄鄉,Stacode=CHN2,Stalon=120.474,Stalat=23.532,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  番路鄉,Stacode=CHN4,Stalon=120.594,Stalat=23.351,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  義竹鄉,Stacode=ICHU,Stalon=120.279,Stalat=23.361,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大埔鄉,Stacode= WTP,Stalon=120.622,Stalat=23.244,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+嘉義市 >>
+Staname=    東區,Stacode=C047,Stalon=120.455,Stalat=23.494,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=    西區,Stacode= CHY,Stalon=120.433,Stalat=23.496,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+臺南市 >>
+Staname=  白河區,Stacode=C015,Stalon=120.414,Stalat=23.353,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  將軍區,Stacode=C016,Stalon=120.162,Stalat=23.219,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  下營區,Stacode=C017,Stalon=120.277,Stalat=23.214,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  新市區,Stacode=C021,Stalon=120.296,Stalat=23.079,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  南化區,Stacode=C022,Stalon=120.470,Stalat=23.044,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  歸仁區,Stacode=C023,Stalon=120.288,Stalat=22.964,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  後壁區,Stacode=C049,Stalon=120.366,Stalat=23.366,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  柳營區,Stacode=C053,Stalon=120.364,Stalat=23.286,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  北門區,Stacode=C056,Stalon=120.139,Stalat=23.262,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  官田區,Stacode=C058,Stalon=120.327,Stalat=23.171,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  安定區,Stacode=C060,Stalon=120.246,Stalat=23.123,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  玉井區,Stacode=C062,Stalon=120.459,Stalat=23.122,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  關廟區,Stacode=C065,Stalon=120.352,Stalat=22.904,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  仁德區,Stacode=C066,Stalon=120.217,Stalat=22.919,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=    南區,Stacode=C069,Stalon=120.190,Stalat=22.973,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=    東區,Stacode=C096,Stalon=120.241,Stalat=22.981,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=    北區,Stacode=C097,Stalon=120.212,Stalat=23.009,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  安平區,Stacode=C098,Stalon=120.166,Stalat=23.001,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  六甲區,Stacode=C100,Stalon=120.351,Stalat=23.225,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  新營區,Stacode=C107,Stalon=120.299,Stalat=23.298,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  安南區,Stacode=C116,Stalon=120.117,Stalat=23.077,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  鹽水區,Stacode=C129,Stalon=120.244,Stalat=23.293,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大內區,Stacode=C131,Stalon=120.361,Stalat=23.120,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  學甲區,Stacode=C140,Stalon=120.175,Stalat=23.238,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  西港區,Stacode=C141,Stalon=120.199,Stalat=23.123,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  左鎮區,Stacode=C142,Stalon=120.404,Stalat=23.056,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  龍崎區,Stacode=C143,Stalon=120.359,Stalat=22.964,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  麻豆區,Stacode=C146,Stalon=120.260,Stalat=23.182,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  楠西區,Stacode=CHN1,Stalon=120.529,Stalat=23.185,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  山上區,Stacode=CHN3,Stalon=120.364,Stalat=23.075,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  七股區,Stacode= SCK,Stalon=120.580,Stalat=23.960,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  佳里區,Stacode= SCL,Stalon=120.202,Stalat=23.174,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  新化區,Stacode= SHH,Stalon=120.348,Stalat=23.021,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  善化區,Stacode= SSH,Stalon=120.288,Stalat=23.136,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  中西區,Stacode= TAI,Stalon=120.205,Stalat=22.993,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  永康區,Stacode=TAI1,Stalon=120.237,Stalat=23.038,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  東山區,Stacode= TWL,Stalon=120.500,Stalat=23.265,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+屏東縣 >>
+Staname=  高樹鄉,Stacode=D028,Stalon=120.599,Stalat=22.826,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  鹽埔鄉,Stacode=D029,Stalon=120.576,Stalat=22.753,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  萬丹鄉,Stacode=D031,Stalon=120.489,Stalat=22.583,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  新園鄉,Stacode=D032,Stalon=120.461,Stalat=22.544,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  東港鎮,Stacode=D033,Stalon=120.461,Stalat=22.462,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  來義鄉,Stacode=D034,Stalon=120.628,Stalat=22.528,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  潮州鎮,Stacode=D035,Stalon=120.540,Stalat=22.548,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  車城鄉,Stacode=D039,Stalon=120.748,Stalat=22.095,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  林邊鄉,Stacode=D044,Stalon=120.511,Stalat=22.437,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  里港鄉,Stacode=D070,Stalon=120.496,Stalat=22.781,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  麟洛鄉,Stacode=D071,Stalon=120.521,Stalat=22.648,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  內埔鄉,Stacode=D072,Stalon=120.601,Stalat=22.666,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  萬巒鄉,Stacode=D074,Stalon=120.572,Stalat=22.573,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  南州鄉,Stacode=D075,Stalon=120.506,Stalat=22.489,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  佳冬鄉,Stacode=D076,Stalon=120.565,Stalat=22.426,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  霧臺鄉,Stacode=D077,Stalon=120.732,Stalat=22.745,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  泰武鄉,Stacode=D079,Stalon=120.633,Stalat=22.591,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  牡丹鄉,Stacode=D097,Stalon=120.838,Stalat=22.177,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  長治鄉,Stacode=D111,Stalon=120.526,Stalat=22.677,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  竹田鄉,Stacode=D112,Stalon=120.545,Stalat=22.582,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  枋寮鄉,Stacode=D113,Stalon=120.591,Stalat=22.368,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  崁頂鄉,Stacode=D114,Stalon=120.511,Stalat=22.514,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  枋山鄉,Stacode=D115,Stalon=120.622,Stalat=22.330,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  恆春鎮,Stacode= HEN,Stalon=120.746,Stalat=22.004,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  春日鄉,Stacode= SCZ,Stalon=120.628,Stalat=22.370,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  九如鄉,Stacode= SGL,Stalon=120.499,Stalat=22.723,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  獅子鄉,Stacode=SLIU,Stalon=120.799,Stalat=22.216,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  瑪家鄉,Stacode= SMG,Stalon=120.645,Stalat=22.705,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  滿州鄉,Stacode= SMS,Stalon=120.837,Stalat=22.020,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  屏東市,Stacode= SPT,Stalon=120.496,Stalat=22.677,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=三地門鄉,Stacode= SSD,Stalon=120.640,Stalat=22.744,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  新埤鄉,Stacode= SSP,Stalon=120.568,Stalat=22.483,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  琉球鄉,Stacode=WLCH,Stalon=120.379,Stalat=22.351,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+宜蘭縣 >>
+Staname=  壯圍鄉,Stacode=E004,Stalon=121.791,Stalat=24.743,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  三星鄉,Stacode=E022,Stalon=121.651,Stalat=24.667,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大同鄉,Stacode=E023,Stalon=121.610,Stalat=24.679,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  羅東鎮,Stacode=E026,Stalon=121.773,Stalat=24.673,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  頭城鎮,Stacode=E033,Stalon=121.828,Stalat=24.863,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  礁溪鄉,Stacode=E035,Stalon=121.768,Stalat=24.822,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  員山鄉,Stacode=E037,Stalon=121.723,Stalat=24.744,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  五結鄉,Stacode=E042,Stalon=121.799,Stalat=24.687,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  冬山鄉,Stacode=E046,Stalon=121.742,Stalat=24.665,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  南澳鄉,Stacode=E062,Stalon=121.801,Stalat=24.466,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  宜蘭市,Stacode= ILA,Stalon=121.756,Stalat=24.764,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  蘇澳鎮,Stacode= TWC,Stalon=121.860,Stalat=24.608,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+花蓮縣 >>
+Staname=  豐濱鄉,Stacode= EGC,Stalon=121.548,Stalat=23.708,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  光復鄉,Stacode=EGFH,Stalon=121.427,Stalat=23.669,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  萬榮鄉,Stacode= ESL,Stalon=121.442,Stalat=23.812,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  壽豐鄉,Stacode= EYL,Stalon=121.602,Stalat=23.904,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  玉里鎮,Stacode=EYUL,Stalon=121.319,Stalat=23.347,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  吉安鄉,Stacode=F015,Stalon=121.563,Stalat=23.973,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  秀林鄉,Stacode=F026,Stalon=121.624,Stalat=24.118,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  瑞穗鄉,Stacode=F036,Stalon=121.374,Stalat=23.498,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  富里鄉,Stacode=F041,Stalon=121.303,Stalat=23.265,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  卓溪鄉,Stacode=F042,Stalon=121.265,Stalat=23.220,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  鳳林鎮,Stacode=F067,Stalon=121.469,Stalat=23.755,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  花蓮市,Stacode= HWA,Stalon=121.613,Stalat=23.975,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  新城鄉,Stacode= TWD,Stalon=121.605,Stalat=24.081,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+臺東縣 >>
+Staname=  成功鎮,Stacode= CHK,Stalon=121.373,Stalat=23.098,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  達仁鄉,Stacode= EAS,Stalon=120.856,Stalat=22.382,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  金峰鄉,Stacode= ECL,Stalon=120.962,Stalat=22.596,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  池上鄉,Stacode=G020,Stalon=121.215,Stalat=23.126,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  海端鄉,Stacode=G021,Stalon=121.176,Stalat=23.102,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  關山鎮,Stacode=G023,Stalon=121.164,Stalat=23.051,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  延平鄉,Stacode=G025,Stalon=121.080,Stalat=22.902,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  卑南鄉,Stacode=G026,Stalon=121.092,Stalat=22.860,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  長濱鄉,Stacode=G031,Stalon=121.468,Stalat=23.356,震度1級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  東河鄉,Stacode=G035,Stalon=121.228,Stalat=22.878,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=太麻里鄉,Stacode=G037,Stalon=120.967,Stalat=22.532,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  鹿野鄉,Stacode=G045,Stalon=121.156,Stalat=22.974,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  蘭嶼鄉,Stacode= LAY,Stalon=121.558,Stalat=22.037,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  綠島鄉,Stacode= LDU,Stalon=121.469,Stalat=22.673,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  大武鄉,Stacode= TAW,Stalon=120.904,Stalat=22.356,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  臺東市,Stacode= TTN,Stalon=121.155,Stalat=22.752,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+澎湖縣 >>
+Staname=  馬公市,Stacode= PNG,Stalon=119.564,Stalat=23.565,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  望安鄉,Stacode= WDG,Stalon=119.668,Stalat=23.257,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+金門縣 >>
+Staname=  金城鎮,Stacode= KNM,Stalon=118.289,Stalat=24.407,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+連江縣 >>
+Staname=  南竿鄉,Stacode= MSU,Stalon=119.923,Stalat=26.169,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000

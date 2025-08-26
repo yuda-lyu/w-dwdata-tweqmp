@@ -5,17 +5,14 @@ import w from 'wsemi'
 import WDwdataTweqmp from './src/WDwdataTweqmp.mjs'
 
 
-let st = {
-    'hostname': '{hostname}',
-    'port': 21,
-    'username': '{username}',
-    'password': '{password}',
-    'fdIni': './'
-}
+let st = {} //開啟useSimulateFiles=true直接模擬ftp下載數據
 
 //fdDwStorageTemp
 let fdDwStorageTemp = `./_dwStorageTemp`
 w.fsCleanFolder(fdDwStorageTemp)
+
+w.fsCopyFile(`./test/100000-townshipInt-All.txt`, `${fdDwStorageTemp}/100000-townshipInt-All.txt`)
+w.fsCopyFile(`./test/100001-townshipInt-All.txt`, `${fdDwStorageTemp}/100001-townshipInt-All.txt`)
 
 //fdDwStorage
 let fdDwStorage = `./_dwStorage`
@@ -34,6 +31,7 @@ let fdResult = './_result'
 w.fsCleanFolder(fdResult)
 
 let opt = {
+    useSimulateFiles: true, //模擬ftp下載數據
     fdDwStorageTemp,
     fdDwStorage,
     fdDwAttime,
@@ -67,4 +65,4 @@ ev.on('change', (msg) => {
 // ...
 
 
-//node g.mjs
+//node g.useSimulateFiles.mjs

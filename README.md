@@ -20,8 +20,6 @@ npm i w-dwdata-tweqmp
 #### Example:
 > **Link:** [[dev source code](https://github.com/yuda-lyu/w-dwdata-tweqmp/blob/master/g.mjs)]
 ```alias
-import fs from 'fs'
-import _ from 'lodash-es'
 import w from 'wsemi'
 import WDwdataTweqmp from './src/WDwdataTweqmp.mjs'
 
@@ -33,17 +31,13 @@ let st = {
     'fdIni': './'
 }
 
-//fdDwStorageTxtTemp
-let fdDwStorageTxtTemp = `./_dwStorageTxtTemp`
-w.fsCleanFolder(fdDwStorageTxtTemp)
+//fdDwStorageTemp
+let fdDwStorageTemp = `./_dwStorageTemp`
+w.fsCleanFolder(fdDwStorageTemp)
 
-//fdDwStorageTxt
-let fdDwStorageTxt = `./_dwStorageTxt`
-w.fsCleanFolder(fdDwStorageTxt)
-
-//fdDwStorageJson
-let fdDwStorageJson = `./_dwStorageJson`
-w.fsCleanFolder(fdDwStorageJson)
+//fdDwStorage
+let fdDwStorage = `./_dwStorage`
+w.fsCleanFolder(fdDwStorage)
 
 //fdDwAttime
 let fdDwAttime = `./_dwAttime`
@@ -58,13 +52,11 @@ let fdResult = './_result'
 w.fsCleanFolder(fdResult)
 
 let opt = {
-    fdDwStorageTxtTemp,
-    fdDwStorageTxt,
-    fdDwStorageJson,
+    fdDwStorageTemp,
+    fdDwStorage,
     fdDwAttime,
     fdDwCurrent,
     fdResult,
-    // funDownloadEqs,
     // funDownload,
     // funGetCurrent,
     // funRemove,
@@ -86,9 +78,9 @@ ev.on('change', (msg) => {
 // change { event: 'proc-callfun-getCurrent', msg: 'done' }
 // change { event: 'compare', msg: 'start...' }
 // change { event: 'compare', msg: 'done' }
-// change { event: 'proc-add-callfun-add', id: '20220101000000', msg: 'start...' }
-// change { event: 'proc-add-callfun-add', id: '20220101000000', msg: 'done' }
-// change { event: 'proc-add-callfun-add', id: '20220101010000', msg: 'start...' }
-// change { event: 'proc-add-callfun-add', id: '20220101010000', msg: 'done' }
+// change { event: 'proc-add-callfun-add', id: '100000-townshipInt-All.txt', msg: 'start...' }
+// change { event: 'proc-add-callfun-add', id: '100000-townshipInt-All.txt', msg: 'done' }
+// change { event: 'proc-add-callfun-add', id: '100001-townshipInt-All.txt', msg: 'start...' }
+// change { event: 'proc-add-callfun-add', id: '100001-townshipInt-All.txt', msg: 'done' }
 // ...
 ```
