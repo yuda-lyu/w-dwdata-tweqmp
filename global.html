@@ -146,7 +146,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="WDwdataTweqmp.mjs.html">WDwdataTweqmp.mjs</a>, <a href="WDwdataTweqmp.mjs.html#line125">line 125</a>
+        <a href="WDwdataTweqmp.mjs.html">WDwdataTweqmp.mjs</a>, <a href="WDwdataTweqmp.mjs.html#line105">line 105</a>
     </li></ul></dd>
     
 
@@ -193,7 +193,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import fs from 'fs'import _ from 'lodash-es'import w from 'wsemi'import WDwdataTweqmp from './src/WDwdataTweqmp.mjs'let st = {    'hostname': '{hostname}',    'port': 21,    'username': '{username}',    'password': '{password}',    'fdIni': './'}//fdDwStorageTxtTemplet fdDwStorageTxtTemp = `./_dwStorageTxtTemp`w.fsCleanFolder(fdDwStorageTxtTemp)//fdDwStorageTxtlet fdDwStorageTxt = `./_dwStorageTxt`w.fsCleanFolder(fdDwStorageTxt)//fdDwStorageJsonlet fdDwStorageJson = `./_dwStorageJson`w.fsCleanFolder(fdDwStorageJson)//fdDwAttimelet fdDwAttime = `./_dwAttime`w.fsCleanFolder(fdDwAttime)//fdDwCurrentlet fdDwCurrent = `./_dwCurrent`w.fsCleanFolder(fdDwCurrent)//fdResultlet fdResult = './_result'w.fsCleanFolder(fdResult)let opt = {    fdDwStorageTxtTemp,    fdDwStorageTxt,    fdDwStorageJson,    fdDwAttime,    fdDwCurrent,    fdResult,    // funDownloadEqs,    // funDownload,    // funGetCurrent,    // funRemove,    // funAdd,    // funModify,}let ev = await WDwdataTweqmp(st, opt)    .catch((err) => {        console.log(err)    })ev.on('change', (msg) => {    delete msg.type    console.log('change', msg)})// change { event: 'start', msg: 'running...' }// change { event: 'proc-callfun-download', msg: 'start...' }// change { event: 'proc-callfun-download', msg: 'done' }// change { event: 'proc-callfun-getCurrent', msg: 'start...' }// change { event: 'proc-callfun-getCurrent', msg: 'done' }// change { event: 'compare', msg: 'start...' }// change { event: 'compare', msg: 'done' }// change { event: 'proc-add-callfun-add', id: '20220101000000', msg: 'start...' }// change { event: 'proc-add-callfun-add', id: '20220101000000', msg: 'done' }// change { event: 'proc-add-callfun-add', id: '20220101010000', msg: 'start...' }// change { event: 'proc-add-callfun-add', id: '20220101010000', msg: 'done' }// ...</code></pre>
+    <pre class="prettyprint"><code>import w from 'wsemi'import WDwdataTweqmp from './src/WDwdataTweqmp.mjs'let st = {    'hostname': '{hostname}',    'port': 21,    'username': '{username}',    'password': '{password}',    'fdIni': './'}//fdDwStorageTemplet fdDwStorageTemp = `./_dwStorageTemp`w.fsCleanFolder(fdDwStorageTemp)//fdDwStoragelet fdDwStorage = `./_dwStorage`w.fsCleanFolder(fdDwStorage)//fdDwAttimelet fdDwAttime = `./_dwAttime`w.fsCleanFolder(fdDwAttime)//fdDwCurrentlet fdDwCurrent = `./_dwCurrent`w.fsCleanFolder(fdDwCurrent)//fdResultlet fdResult = './_result'w.fsCleanFolder(fdResult)let opt = {    fdDwStorageTemp,    fdDwStorage,    fdDwAttime,    fdDwCurrent,    fdResult,    // funDownload,    // funGetCurrent,    // funRemove,    // funAdd,    // funModify,}let ev = await WDwdataTweqmp(st, opt)    .catch((err) => {        console.log(err)    })ev.on('change', (msg) => {    delete msg.type    console.log('change', msg)})// change { event: 'start', msg: 'running...' }// change { event: 'proc-callfun-download', msg: 'start...' }// change { event: 'proc-callfun-download', msg: 'done' }// change { event: 'proc-callfun-getCurrent', msg: 'start...' }// change { event: 'proc-callfun-getCurrent', msg: 'done' }// change { event: 'compare', msg: 'start...' }// change { event: 'compare', msg: 'done' }// change { event: 'proc-add-callfun-add', id: '100000-townshipInt-All.txt', msg: 'start...' }// change { event: 'proc-add-callfun-add', id: '100000-townshipInt-All.txt', msg: 'done' }// change { event: 'proc-add-callfun-add', id: '100001-townshipInt-All.txt', msg: 'start...' }// change { event: 'proc-add-callfun-add', id: '100001-townshipInt-All.txt', msg: 'done' }// ...</code></pre>
 
 
 
@@ -584,6 +584,8 @@
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -594,7 +596,7 @@
 
         <tr>
             
-                <td class="name"><code>fdDwStorageTxtTemp</code></td>
+                <td class="name"><code>fdDwStorageTemp</code></td>
             
 
             <td class="type">
@@ -620,15 +622,21 @@
             
 
             
+                <td class="default">
+                
+                    <code>'./_dwStorageTemp'</code>
+                
+                </td>
+            
 
-            <td class="description last"><p>輸入單次下載txt存放資料夾字串，預設'./_dwStorageTxtTemp'</p></td>
+            <td class="description last"><p>輸入單次下載檔案存放資料夾字串，預設'./_dwStorageTemp'</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>fdDwStorageTxt</code></td>
+                <td class="name"><code>fdDwStorage</code></td>
             
 
             <td class="type">
@@ -654,42 +662,14 @@
             
 
             
-
-            <td class="description last"><p>輸入合併儲存txt資料夾字串，預設'./_dwStorageTxt'</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>fdDwStorageJson</code></td>
-            
-
-            <td class="type">
-            
+                <td class="default">
                 
-<span class="param-type">String</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
+                    <code>'./_dwStorage'</code>
                 
                 </td>
             
 
-            
-
-            <td class="description last"><p>輸入解析txt成為json後之存放資料夾字串，預設'./_dwStorageJson'</p></td>
+            <td class="description last"><p>輸入合併儲存檔案資料夾字串，預設'./_dwStorage'</p></td>
         </tr>
 
     
@@ -721,6 +701,12 @@
                 </td>
             
 
+            
+                <td class="default">
+                
+                    <code>'./_dwAttime'</code>
+                
+                </td>
             
 
             <td class="description last"><p>輸入當前下載供比對hash用之數據資料夾字串，預設'./_dwAttime'</p></td>
@@ -756,6 +742,12 @@
             
 
             
+                <td class="default">
+                
+                    <code>'./_dwCurrent'</code>
+                
+                </td>
+            
 
             <td class="description last"><p>輸入已下載供比對hash用之數據資料夾字串，預設'./_dwCurrent'</p></td>
         </tr>
@@ -789,6 +781,12 @@
                 </td>
             
 
+            
+                <td class="default">
+                
+                    <code>'./_result'</code>
+                
+                </td>
             
 
             <td class="description last"><p>輸入已下載數據所連動生成數據資料夾字串，預設'./_result'</p></td>
@@ -824,6 +822,12 @@
             
 
             
+                <td class="default">
+                
+                    <code>'./_taskCpSrc'</code>
+                
+                </td>
+            
 
             <td class="description last"><p>輸入任務狀態之來源端資料夾字串，預設'./_taskCpSrc'</p></td>
         </tr>
@@ -858,42 +862,14 @@
             
 
             
-
-            <td class="description last"><p>輸入儲存log資料夾字串，預設'./_logs'</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>funDownloadEqs</code></td>
-            
-
-            <td class="type">
-            
+                <td class="default">
                 
-<span class="param-type">function</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
+                    <code>'./_logs'</code>
                 
                 </td>
             
 
-            
-
-            <td class="description last"><p>輸入自定義下載地震數據函數，回傳資料陣列</p></td>
+            <td class="description last"><p>輸入儲存log資料夾字串，預設'./_logs'</p></td>
         </tr>
 
     
@@ -926,8 +902,14 @@
             
 
             
+                <td class="default">
+                
+                    <code>null</code>
+                
+                </td>
+            
 
-            <td class="description last"><p>輸入自定義當前下載之hash數據處理函數，回傳資料陣列</p></td>
+            <td class="description last"><p>輸入自定義當前下載之hash數據處理函數，回傳資料陣列，預設null</p></td>
         </tr>
 
     
@@ -960,8 +942,14 @@
             
 
             
+                <td class="default">
+                
+                    <code>null</code>
+                
+                </td>
+            
 
-            <td class="description last"><p>輸入自定義已下載之hash數據處理函數，回傳資料陣列</p></td>
+            <td class="description last"><p>輸入自定義已下載之hash數據處理函數，回傳資料陣列，預設null</p></td>
         </tr>
 
     
@@ -994,8 +982,14 @@
             
 
             
+                <td class="default">
+                
+                    <code>null</code>
+                
+                </td>
+            
 
-            <td class="description last"><p>輸入當有新資料時，需要連動處理之函數</p></td>
+            <td class="description last"><p>輸入當有新資料時，需要連動處理之函數，預設null</p></td>
         </tr>
 
     
@@ -1028,8 +1022,14 @@
             
 
             
+                <td class="default">
+                
+                    <code>null</code>
+                
+                </td>
+            
 
-            <td class="description last"><p>輸入當有資料需更新時，需要連動處理之函數</p></td>
+            <td class="description last"><p>輸入當有資料需更新時，需要連動處理之函數，預設null</p></td>
         </tr>
 
     
@@ -1062,8 +1062,14 @@
             
 
             
+                <td class="default">
+                
+                    <code>null</code>
+                
+                </td>
+            
 
-            <td class="description last"><p>輸入當有資料需刪除時，需要連動處理之函數</p></td>
+            <td class="description last"><p>輸入當有資料需刪除時，需要連動處理之函數，預設null</p></td>
         </tr>
 
     
@@ -1138,7 +1144,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Tue Aug 26 2025 08:56:32 GMT+0800 (台北標準時間) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Tue Aug 26 2025 13:06:05 GMT+0800 (台北標準時間) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
