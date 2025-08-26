@@ -19,7 +19,6 @@ let downloadFiles = async(st, fdDwStorageTxtTemp, fdDwStorageTxt) => {
         //ftp
         let ftp = WFtp({
             ...st,
-            transportation: 'SFTP',
             timeLimit: 100 * 1000, //100s
         })
         // console.log('ftp', ftp)
