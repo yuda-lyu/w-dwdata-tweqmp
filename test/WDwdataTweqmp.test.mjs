@@ -69,9 +69,9 @@ describe('WDwdataTweqmp', function() {
         })
         // change { event: 'start', msg: 'running...' }
         // change { event: 'proc-callfun-download', msg: 'start...' }
-        // change { event: 'proc-callfun-download', msg: 'done' }
+        // change { event: 'proc-callfun-download', num: 2, msg: 'done' }
         // change { event: 'proc-callfun-getCurrent', msg: 'start...' }
-        // change { event: 'proc-callfun-getCurrent', msg: 'done' }
+        // change { event: 'proc-callfun-getCurrent', num: 0, msg: 'done' }
         // change { event: 'compare', msg: 'start...' }
         // change { event: 'compare', msg: 'done' }
         // change { event: 'proc-add-callfun-add', id: '100000-townshipInt-All.txt', msg: 'start...' }
@@ -85,9 +85,9 @@ describe('WDwdataTweqmp', function() {
     let ms = [
         { event: 'start', msg: 'running...' },
         { event: 'proc-callfun-download', msg: 'start...' },
-        { event: 'proc-callfun-download', msg: 'done' },
+        { event: 'proc-callfun-download', num: 2, msg: 'done' },
         { event: 'proc-callfun-getCurrent', msg: 'start...' },
-        { event: 'proc-callfun-getCurrent', msg: 'done' },
+        { event: 'proc-callfun-getCurrent', num: 0, msg: 'done' },
         { event: 'compare', msg: 'start...' },
         { event: 'compare', msg: 'done' },
         {

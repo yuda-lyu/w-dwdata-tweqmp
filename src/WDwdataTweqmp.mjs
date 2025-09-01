@@ -2,7 +2,9 @@ import fs from 'fs'
 import get from 'lodash-es/get.js'
 import isestr from 'wsemi/src/isestr.mjs'
 import isbol from 'wsemi/src/isbol.mjs'
+import isp0int from 'wsemi/src/isp0int.mjs'
 import isfun from 'wsemi/src/isfun.mjs'
+import cdbl from 'wsemi/src/cdbl.mjs'
 import fsIsFolder from 'wsemi/src/fsIsFolder.mjs'
 import fsCleanFolder from 'wsemi/src/fsCleanFolder.mjs'
 import fsCreateFolder from 'wsemi/src/fsCreateFolder.mjs'
@@ -34,6 +36,7 @@ import parseData from './parseData.mjs'
  * @param {Function} [opt.funAdd=null] 輸入當有新資料時，需要連動處理之函數，預設null
  * @param {Function} [opt.funModify=null] 輸入當有資料需更新時，需要連動處理之函數，預設null
  * @param {Function} [opt.funRemove=null] 輸入當有資料需刪除時，需要連動處理之函數，預設null
+ * @param {Number} [opt.timeToleranceRemove=0] 輸入刪除任務之防抖時長，單位ms，預設0，代表不使用
  * @returns {Object} 回傳事件物件，可呼叫函數on監聽change事件
  * @example
  *
@@ -90,9 +93,9 @@ import parseData from './parseData.mjs'
  * })
  * // change { event: 'start', msg: 'running...' }
  * // change { event: 'proc-callfun-download', msg: 'start...' }
- * // change { event: 'proc-callfun-download', msg: 'done' }
+ * // change { event: 'proc-callfun-download', num: 2, msg: 'done' }
  * // change { event: 'proc-callfun-getCurrent', msg: 'start...' }
- * // change { event: 'proc-callfun-getCurrent', msg: 'done' }
+ * // change { event: 'proc-callfun-getCurrent', num: 0, msg: 'done' }
  * // change { event: 'compare', msg: 'start...' }
  * // change { event: 'compare', msg: 'done' }
  * // change { event: 'proc-add-callfun-add', id: '100000-townshipInt-All.txt', msg: 'start...' }
@@ -194,6 +197,13 @@ let WDwdataTweqmp = async(st, opt = {}) => {
     //funRemove
     let funRemove = get(opt, 'funRemove')
 
+    //timeToleranceRemove
+    let timeToleranceRemove = get(opt, 'timeToleranceRemove')
+    if (!isp0int(timeToleranceRemove)) {
+        timeToleranceRemove = 0
+    }
+    timeToleranceRemove = cdbl(timeToleranceRemove)
+
     //funRemoveDef
     let funRemoveDef = async(v) => {
 
@@ -273,6 +283,7 @@ let WDwdataTweqmp = async(st, opt = {}) => {
         funRemove,
         funAdd,
         funModify,
+        timeToleranceRemove,
     }
     let ev = await WDwdataFtp(st, optFtp)
 
