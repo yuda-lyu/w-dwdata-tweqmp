@@ -73,7 +73,7 @@ describe('WDwdataTweqmp', function() {
         // change { event: 'proc-callfun-getCurrent', msg: 'start...' }
         // change { event: 'proc-callfun-getCurrent', num: 0, msg: 'done' }
         // change { event: 'compare', msg: 'start...' }
-        // change { event: 'compare', msg: 'done' }
+        // change { event: 'compare', numRemove: 0, numAdd: 2, numModify: 0, numSame: 0, msg: 'done' }
         // change { event: 'proc-add-callfun-add', id: '100000-townshipInt-All.txt', msg: 'start...' }
         // change { event: 'proc-add-callfun-add', id: '100000-townshipInt-All.txt', msg: 'done' }
         // change { event: 'proc-add-callfun-add', id: '100001-townshipInt-All.txt', msg: 'start...' }
@@ -89,7 +89,7 @@ describe('WDwdataTweqmp', function() {
         { event: 'proc-callfun-getCurrent', msg: 'start...' },
         { event: 'proc-callfun-getCurrent', num: 0, msg: 'done' },
         { event: 'compare', msg: 'start...' },
-        { event: 'compare', msg: 'done' },
+        { event: 'compare', numRemove: 0, numAdd: 2, numModify: 0, numSame: 0, msg: 'done' },
         {
             event: 'proc-add-callfun-add',
             id: '100000-townshipInt-All.txt',
