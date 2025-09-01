@@ -1,11 +1,11 @@
 {
   "name": "w-dwdata-tweqmp",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "main": "dist/w-dwdata-tweqmp.umd.js",
   "dependencies": {
     "axios": "^1.11.0",
     "lodash-es": "^4.17.21",
-    "w-dwdata-ftp": "^1.0.6",
+    "w-dwdata-ftp": "^1.0.7",
     "wsemi": "^1.8.20"
   },
   "devDependencies": {
