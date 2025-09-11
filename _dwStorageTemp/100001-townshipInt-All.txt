@@ -2,7 +2,7 @@
 觀測時間：2021-12-31 17:00:00
 觀測長度(秒)：50
 臺北市 >>                                                                                        
-Staname=  北投區,Stacode=A002,Stalon=121.467,Stalat=25.126,震度0級,PGA(V)= 235.44,PGA(NS)= 235.44,PGA(EW)= 235.44,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
+Staname=  北投區,Stacode=A002,Stalon=121.467,Stalat=25.126,震度0級,PGA(V)= 225.99,PGA(NS)= 215.85,PGA(EW)= 202.53,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
 Staname=  士林區,Stacode=A006,Stalon=121.515,Stalat=25.094,震度0級,PGA(V)= 235.44,PGA(NS)= 235.44,PGA(EW)= 235.44,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
 Staname=  大同區,Stacode=A007,Stalon=121.517,Stalat=25.073,震度0級,PGA(V)= 235.44,PGA(NS)= 235.44,PGA(EW)= 235.44,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
 Staname=  內湖區,Stacode=A009,Stalon=121.580,Stalat=25.080,震度0級,PGA(V)= 235.44,PGA(NS)= 235.44,PGA(EW)= 235.44,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000

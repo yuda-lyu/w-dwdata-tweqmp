@@ -8,6 +8,7 @@ import cdbl from 'wsemi/src/cdbl.mjs'
 import fsIsFolder from 'wsemi/src/fsIsFolder.mjs'
 import fsCleanFolder from 'wsemi/src/fsCleanFolder.mjs'
 import fsCreateFolder from 'wsemi/src/fsCreateFolder.mjs'
+import fsCopyFolder from 'wsemi/src/fsCopyFolder.mjs'
 import fsDeleteFolder from 'wsemi/src/fsDeleteFolder.mjs'
 import WDwdataFtp from 'w-dwdata-ftp/src/WDwdataFtp.mjs'
 import parseData from './parseData.mjs'
@@ -28,6 +29,7 @@ import parseData from './parseData.mjs'
  * @param {String} [opt.fdDwStorage='./_dwStorage'] 輸入合併儲存檔案資料夾字串，預設'./_dwStorage'
  * @param {String} [opt.fdDwAttime='./_dwAttime'] 輸入當前下載供比對hash用之數據資料夾字串，預設'./_dwAttime'
  * @param {String} [opt.fdDwCurrent='./_dwCurrent'] 輸入已下載供比對hash用之數據資料夾字串，預設'./_dwCurrent'
+ * @param {String} [opt.fdResultTemp=`./_resultTemp`] 輸入若有變更數據時，儲存前次已下載數據所連動生成數據資料夾字串，預設`./_resultTemp`
  * @param {String} [opt.fdResult='./_result'] 輸入已下載數據所連動生成數據資料夾字串，預設'./_result'
  * @param {String} [opt.fdTaskCpActualSrc='./_taskCpActualSrc'] 輸入任務狀態之來源端完整資料夾字串，預設'./_taskCpActualSrc'
  * @param {String} [opt.fdTaskCpSrc='./_taskCpSrc'] 輸入任務狀態之來源端資料夾字串，預設'./_taskCpSrc'
@@ -156,6 +158,15 @@ let WDwdataTweqmp = async(st, opt = {}) => {
         fsCreateFolder(fdDwCurrent)
     }
 
+    //fdResultTemp
+    let fdResultTemp = get(opt, 'fdResultTemp')
+    if (!isestr(fdResultTemp)) {
+        fdResultTemp = `./_resultTemp`
+    }
+    if (!fsIsFolder(fdResultTemp)) {
+        fsCreateFolder(fdResultTemp)
+    }
+
     //fdResult
     let fdResult = get(opt, 'fdResult')
     if (!isestr(fdResult)) {
@@ -228,7 +239,7 @@ let WDwdataTweqmp = async(st, opt = {}) => {
         fsCleanFolder(fd)
 
         //readFileSync
-        let fpSrc = `${fdDwStorage}/${v.id}` //v.id為數據檔名
+        let fpSrc = `${fdDwStorageTemp}/${v.id}` //新下載檔案存放於fdDwStorageTemp, v.id為數據檔名
         let c = fs.readFileSync(fpSrc, 'utf8')
 
         //parseData
@@ -246,29 +257,54 @@ let WDwdataTweqmp = async(st, opt = {}) => {
     //funModifyDef
     let funModifyDef = async(v) => {
 
-        let fd = `${fdResult}/${v.id}` //使用v.id做為資料夾名
-        if (!fsIsFolder(fd)) {
-            fsCreateFolder(fd)
+        //複製舊資料夾(含檔案)至fdResultTemp做暫時備份, fdResultTemp會於funAfterStart清空, 於funBeforeEnd刪除
+        if (true) {
+
+            let fdSrc = `${fdResult}/${v.id}`
+            let fdTar = `${fdResultTemp}/${v.id}`
+            fsCopyFolder(fdSrc, fdTar)
+
         }
-        fsCleanFolder(fd)
 
-        //readFileSync
-        let fpSrc = `${fdDwStorage}/${v.id}` //v.id為數據檔名
-        let c = fs.readFileSync(fpSrc, 'utf8')
+        //複製新檔案至fdResult
+        if (true) {
 
-        //parseData
-        let eq = parseData(c)
+            let fd = `${fdResult}/${v.id}` //使用v.id做為資料夾名
+            if (!fsIsFolder(fd)) {
+                fsCreateFolder(fd)
+            }
+            fsCleanFolder(fd)
 
-        //writeFileSync
-        let fpTar = `${fd}/${eq.id}.json` //使用eq.id做為檔名
-        fs.writeFileSync(fpTar, JSON.stringify(eq), 'utf8')
+            //readFileSync
+            let fpSrc = `${fdDwStorageTemp}/${v.id}` //新下載檔案存放於fdDwStorageTemp, v.id為數據檔名
+            let c = fs.readFileSync(fpSrc, 'utf8')
+
+            //parseData
+            let eq = parseData(c)
+
+            //writeFileSync
+            let fpTar = `${fd}/${eq.id}.json` //使用eq.id做為檔名
+            fs.writeFileSync(fpTar, JSON.stringify(eq), 'utf8')
+
+        }
 
     }
     if (!isfun(funModify)) {
         funModify = funModifyDef
     }
 
-    //WDwdataFtp
+    let funAfterStart = async() => {
+
+        fsCleanFolder(fdResultTemp)
+
+    }
+
+    let funBeforeEnd = async() => {
+
+        fsCleanFolder(fdResultTemp)
+
+    }
+
     let optFtp = {
         useSimulateFiles,
         useExpandOnOldFiles: true, //為增量檔案
@@ -284,6 +320,8 @@ let WDwdataTweqmp = async(st, opt = {}) => {
         funRemove,
         funAdd,
         funModify,
+        funAfterStart,
+        funBeforeEnd,
         timeToleranceRemove,
     }
     let ev = await WDwdataFtp(st, optFtp)
