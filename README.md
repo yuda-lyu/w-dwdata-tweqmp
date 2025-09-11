@@ -47,6 +47,10 @@ w.fsCleanFolder(fdDwAttime)
 let fdDwCurrent = `./_dwCurrent`
 w.fsCleanFolder(fdDwCurrent)
 
+//fdResultTemp
+let fdResultTemp = './_resultTemp'
+w.fsCleanFolder(fdResultTemp)
+
 //fdResult
 let fdResult = './_result'
 w.fsCleanFolder(fdResult)
@@ -56,6 +60,7 @@ let opt = {
     fdDwStorage,
     fdDwAttime,
     fdDwCurrent,
+    fdResultTemp,
     fdResult,
     // funDownload,
     // funGetCurrent,

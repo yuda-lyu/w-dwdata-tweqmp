@@ -70,6 +70,10 @@ import parseData from './parseData.mjs'
  * let fdDwCurrent = `./_dwCurrent`
  * w.fsCleanFolder(fdDwCurrent)
  *
+ * //fdResultTemp
+ * let fdResultTemp = './_resultTemp'
+ * w.fsCleanFolder(fdResultTemp)
+ *
  * //fdResult
  * let fdResult = './_result'
  * w.fsCleanFolder(fdResult)
@@ -79,6 +83,7 @@ import parseData from './parseData.mjs'
  *     fdDwStorage,
  *     fdDwAttime,
  *     fdDwCurrent,
+ *     fdResultTemp,
  *     fdResult,
  *     // funDownload,
  *     // funGetCurrent,
