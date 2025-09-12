@@ -1,5 +1,5 @@
 # w-dwdata-tweqmp
-A download tool for earthquake ML and PGA data from Taiwan CWA.
+A downloader for earthquake ML and PGA data from Taiwan CWA.
 
 ![language](https://img.shields.io/badge/language-JavaScript-orange.svg) 
 [![npm version](http://img.shields.io/npm/v/w-dwdata-tweqmp.svg?style=flat)](https://npmjs.org/package/w-dwdata-tweqmp) 

@@ -93,6 +93,7 @@ describe('multi', function() {
                     'proc-callfun-getCurrent',
                     'proc-callfun-afterStart',
                     'proc-callfun-beforeEnd',
+                    'move-files-to-storage',
                 ])) {
                     return
                 }

@@ -119,6 +119,8 @@ describe('once', function() {
             msg: 'done'
         },
         { event: 'proc-callfun-beforeEnd', msg: 'start...' },
+        { event: 'move-files-to-storage', msg: 'start...' },
+        { event: 'move-files-to-storage', msg: 'done' },
         { event: 'proc-callfun-beforeEnd', msg: 'done' },
         { event: 'end', msg: 'done' }
     ]

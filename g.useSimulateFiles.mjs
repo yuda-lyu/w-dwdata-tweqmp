@@ -67,11 +67,11 @@ let run = async() => {
         fdDwCurrent,
         fdResultTemp,
         fdResult,
-    // funDownload,
-    // funGetCurrent,
-    // funRemove,
-    // funAdd,
-    // funModify,
+        // funDownload,
+        // funGetCurrent,
+        // funRemove,
+        // funAdd,
+        // funModify,
     }
     let ev = await WDwdataTweqmp(st, opt)
         .catch((err) => {
@@ -88,6 +88,7 @@ let run = async() => {
             'proc-callfun-getCurrent',
             'proc-callfun-afterStart',
             'proc-callfun-beforeEnd',
+            'move-files-to-storage',
         ])) {
             return
         }

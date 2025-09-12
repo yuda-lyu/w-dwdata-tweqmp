@@ -15,7 +15,11 @@ import parseData from './parseData.mjs'
 
 
 /**
- * 下載FTP地震資料
+ * 基於檔案之下載台灣氣象署FTP地震數據與任務建構器
+ *
+ * 執行階段最新hash數據放置於fdDwAttime，前次hash數據放置於fdDwCurrent，於結束前會將fdDwAttime複製蓋過fdDwCurrent
+ *
+ * 執行階段最新數據放置於fdDwStorageTemp，前次數據放置於fdDwStorage，於結束前會將fdDwStorageTemp複製蓋過fdDwStorage
  *
  * @param {String} st 輸入設定FTP連線資訊物件
  * @param {String} [st.transportation='FTP'] 輸入傳輸協定字串，可選'FTP'、'SFTP'，預設'FTP'
@@ -25,7 +29,7 @@ import parseData from './parseData.mjs'
  * @param {String} [st.password=''] 輸入密碼字串，預設''
  * @param {String} [st.fdIni='./'] 輸入同步資料夾字串，預設'./'
  * @param {Object} [opt={}] 輸入設定物件，預設{}
- * @param {String} [opt.fdDwStorageTemp='./_dwStorageTemp'] 輸入單次下載檔案存放資料夾字串，預設'./_dwStorageTemp'
+ * @param {String} [opt.fdDwStorageTemp='./_dwStorageTemp'] 輸入最新下載檔案存放資料夾字串，預設'./_dwStorageTemp'
  * @param {String} [opt.fdDwStorage='./_dwStorage'] 輸入合併儲存檔案資料夾字串，預設'./_dwStorage'
  * @param {String} [opt.fdDwAttime='./_dwAttime'] 輸入當前下載供比對hash用之數據資料夾字串，預設'./_dwAttime'
  * @param {String} [opt.fdDwCurrent='./_dwCurrent'] 輸入已下載供比對hash用之數據資料夾字串，預設'./_dwCurrent'
@@ -127,7 +131,7 @@ let WDwdataTweqmp = async(st, opt = {}) => {
         useSimulateFiles = false
     }
 
-    //fdDwStorageTemp, 單次下載檔案存放資料夾
+    //fdDwStorageTemp, 最新下載檔案存放資料夾
     let fdDwStorageTemp = get(opt, 'fdDwStorageTemp')
     if (!isestr(fdDwStorageTemp)) {
         fdDwStorageTemp = `./_dwStorageTemp`
