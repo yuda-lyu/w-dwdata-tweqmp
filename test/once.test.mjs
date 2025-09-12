@@ -22,6 +22,10 @@ describe('once', function() {
         w.fsCopyFile(`./test/100000-townshipInt-All.txt`, `${fdDwStorageTemp}/100000-townshipInt-All.txt`)
         w.fsCopyFile(`./test/100001-townshipInt-All.txt`, `${fdDwStorageTemp}/100001-townshipInt-All.txt`)
 
+        //fdTagRemove
+        let fdTagRemove = `./_once_tagRemove`
+        w.fsCleanFolder(fdTagRemove)
+
         //fdDwStorage
         let fdDwStorage = `./_once_dwStorage`
         w.fsCleanFolder(fdDwStorage)
@@ -42,14 +46,26 @@ describe('once', function() {
         let fdResult = './_once_result'
         w.fsCleanFolder(fdResult)
 
+        //fdTaskCpActualSrc
+        let fdTaskCpActualSrc = `./_once_taskCpActualSrc`
+        w.fsCleanFolder(fdTaskCpActualSrc)
+
+        //fdTaskCpSrc
+        let fdTaskCpSrc = `./_once_taskCpSrc`
+        w.fsCleanFolder(fdTaskCpSrc)
+
         let opt = {
             useSimulateFiles: true, //模擬ftp下載數據
+            fdTagRemove,
             fdDwStorageTemp,
             fdDwStorage,
             fdDwAttime,
             fdDwCurrent,
             fdResultTemp,
             fdResult,
+            fdTaskCpActualSrc,
+            fdTaskCpSrc,
+            // fdLog,
             // funDownload,
             // funGetCurrent,
             // funRemove,
@@ -69,12 +85,17 @@ describe('once', function() {
             ms.push(msg)
         })
         ev.on('end', () => {
+
+            w.fsDeleteFolder(fdTagRemove)
             w.fsDeleteFolder(fdDwStorageTemp)
             w.fsDeleteFolder(fdDwStorage)
             w.fsDeleteFolder(fdDwAttime)
             w.fsDeleteFolder(fdDwCurrent)
             w.fsDeleteFolder(fdResultTemp)
             w.fsDeleteFolder(fdResult)
+            w.fsDeleteFolder(fdTaskCpActualSrc)
+            w.fsDeleteFolder(fdTaskCpSrc)
+
             // console.log('ms', ms)
             pm.resolve(ms)
         })

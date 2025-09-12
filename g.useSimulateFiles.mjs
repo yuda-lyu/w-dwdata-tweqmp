@@ -1,11 +1,15 @@
 // import path from 'path'
 import fs from 'fs'
-import _ from 'lodash-es'
+// import _ from 'lodash-es'
 import w from 'wsemi'
 import WDwdataTweqmp from './src/WDwdataTweqmp.mjs'
 
 
 let st = {} //開啟useSimulateFiles=true直接模擬ftp下載數據
+
+//fdTagRemove
+let fdTagRemove = `./_tagRemove`
+w.fsCleanFolder(fdTagRemove)
 
 //fdDwStorageTemp
 let fdDwStorageTemp = `./_dwStorageTemp`
@@ -30,6 +34,14 @@ w.fsCleanFolder(fdResultTemp)
 //fdResult
 let fdResult = './_result'
 w.fsCleanFolder(fdResult)
+
+//fdTaskCpActualSrc
+let fdTaskCpActualSrc = `./_taskCpActualSrc`
+w.fsCleanFolder(fdTaskCpActualSrc)
+
+//fdTaskCpSrc
+let fdTaskCpSrc = `./_taskCpSrc`
+w.fsCleanFolder(fdTaskCpSrc)
 
 let kpOper = {
     1: () => {
@@ -61,12 +73,16 @@ let run = async() => {
 
     let opt = {
         useSimulateFiles: true, //模擬ftp下載數據
+        fdTagRemove,
         fdDwStorageTemp,
         fdDwStorage,
         fdDwAttime,
         fdDwCurrent,
         fdResultTemp,
         fdResult,
+        fdTaskCpActualSrc,
+        fdTaskCpSrc,
+    // fdLog,
         // funDownload,
         // funGetCurrent,
         // funRemove,

@@ -1,6 +1,6 @@
 // import path from 'path'
-import fs from 'fs'
-import _ from 'lodash-es'
+// import fs from 'fs'
+// import _ from 'lodash-es'
 import w from 'wsemi'
 import WDwdataTweqmp from './src/WDwdataTweqmp.mjs'
 
@@ -12,6 +12,10 @@ let st = {
     'password': '{password}',
     'fdIni': './'
 }
+
+//fdTagRemove
+let fdTagRemove = `./_tagRemove`
+w.fsCleanFolder(fdTagRemove)
 
 //fdDwStorageTemp
 let fdDwStorageTemp = `./_dwStorageTemp`
@@ -37,13 +41,25 @@ w.fsCleanFolder(fdResultTemp)
 let fdResult = './_result'
 w.fsCleanFolder(fdResult)
 
+//fdTaskCpActualSrc
+let fdTaskCpActualSrc = `./_taskCpActualSrc`
+w.fsCleanFolder(fdTaskCpActualSrc)
+
+//fdTaskCpSrc
+let fdTaskCpSrc = `./_taskCpSrc`
+w.fsCleanFolder(fdTaskCpSrc)
+
 let opt = {
+    fdTagRemove,
     fdDwStorageTemp,
     fdDwStorage,
     fdDwAttime,
     fdDwCurrent,
     fdResultTemp,
     fdResult,
+    fdTaskCpActualSrc,
+    fdTaskCpSrc,
+    // fdLog,
     // funDownload,
     // funGetCurrent,
     // funRemove,

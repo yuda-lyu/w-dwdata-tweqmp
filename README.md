@@ -31,6 +31,10 @@ let st = {
     'fdIni': './'
 }
 
+//fdTagRemove
+let fdTagRemove = `./_tagRemove`
+w.fsCleanFolder(fdTagRemove)
+
 //fdDwStorageTemp
 let fdDwStorageTemp = `./_dwStorageTemp`
 w.fsCleanFolder(fdDwStorageTemp)
@@ -55,13 +59,25 @@ w.fsCleanFolder(fdResultTemp)
 let fdResult = './_result'
 w.fsCleanFolder(fdResult)
 
+//fdTaskCpActualSrc
+let fdTaskCpActualSrc = `./_taskCpActualSrc`
+w.fsCleanFolder(fdTaskCpActualSrc)
+
+//fdTaskCpSrc
+let fdTaskCpSrc = `./_taskCpSrc`
+w.fsCleanFolder(fdTaskCpSrc)
+
 let opt = {
+    fdTagRemove,
     fdDwStorageTemp,
     fdDwStorage,
     fdDwAttime,
     fdDwCurrent,
     fdResultTemp,
     fdResult,
+    fdTaskCpActualSrc,
+    fdTaskCpSrc,
+    // fdLog,
     // funDownload,
     // funGetCurrent,
     // funRemove,

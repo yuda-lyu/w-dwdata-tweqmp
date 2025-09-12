@@ -148,7 +148,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="WDwdataTweqmp.mjs.html">WDwdataTweqmp.mjs</a>, <a href="WDwdataTweqmp.mjs.html#line120">line 120</a>
+        <a href="WDwdataTweqmp.mjs.html">WDwdataTweqmp.mjs</a>, <a href="WDwdataTweqmp.mjs.html#line137">line 137</a>
     </li></ul></dd>
     
 
@@ -195,7 +195,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import w from 'wsemi'import WDwdataTweqmp from './src/WDwdataTweqmp.mjs'let st = {    'hostname': '{hostname}',    'port': 21,    'username': '{username}',    'password': '{password}',    'fdIni': './'}//fdDwStorageTemplet fdDwStorageTemp = `./_dwStorageTemp`w.fsCleanFolder(fdDwStorageTemp)//fdDwStoragelet fdDwStorage = `./_dwStorage`w.fsCleanFolder(fdDwStorage)//fdDwAttimelet fdDwAttime = `./_dwAttime`w.fsCleanFolder(fdDwAttime)//fdDwCurrentlet fdDwCurrent = `./_dwCurrent`w.fsCleanFolder(fdDwCurrent)//fdResultTemplet fdResultTemp = './_resultTemp'w.fsCleanFolder(fdResultTemp)//fdResultlet fdResult = './_result'w.fsCleanFolder(fdResult)let opt = {    fdDwStorageTemp,    fdDwStorage,    fdDwAttime,    fdDwCurrent,    fdResultTemp,    fdResult,    // funDownload,    // funGetCurrent,    // funRemove,    // funAdd,    // funModify,}let ev = await WDwdataTweqmp(st, opt)    .catch((err) => {        console.log(err)    })ev.on('change', (msg) => {    delete msg.type    console.log('change', msg)})// change { event: 'start', msg: 'running...' }// change { event: 'proc-callfun-download', msg: 'start...' }// change { event: 'proc-callfun-download', num: 2, msg: 'done' }// change { event: 'proc-callfun-getCurrent', msg: 'start...' }// change { event: 'proc-callfun-getCurrent', num: 0, msg: 'done' }// change { event: 'compare', msg: 'start...' }// change { event: 'compare', numRemove: 0, numAdd: 2, numModify: 0, numSame: 0, msg: 'done' }// change { event: 'proc-add-callfun-add', id: '100000-townshipInt-All.txt', msg: 'start...' }// change { event: 'proc-add-callfun-add', id: '100000-townshipInt-All.txt', msg: 'done' }// change { event: 'proc-add-callfun-add', id: '100001-townshipInt-All.txt', msg: 'start...' }// change { event: 'proc-add-callfun-add', id: '100001-townshipInt-All.txt', msg: 'done' }// ...</code></pre>
+    <pre class="prettyprint"><code>import w from 'wsemi'import WDwdataTweqmp from './src/WDwdataTweqmp.mjs'let st = {    'hostname': '{hostname}',    'port': 21,    'username': '{username}',    'password': '{password}',    'fdIni': './'}//fdTagRemovelet fdTagRemove = `./_tagRemove`w.fsCleanFolder(fdTagRemove)//fdDwStorageTemplet fdDwStorageTemp = `./_dwStorageTemp`w.fsCleanFolder(fdDwStorageTemp)//fdDwStoragelet fdDwStorage = `./_dwStorage`w.fsCleanFolder(fdDwStorage)//fdDwAttimelet fdDwAttime = `./_dwAttime`w.fsCleanFolder(fdDwAttime)//fdDwCurrentlet fdDwCurrent = `./_dwCurrent`w.fsCleanFolder(fdDwCurrent)//fdResultTemplet fdResultTemp = './_resultTemp'w.fsCleanFolder(fdResultTemp)//fdResultlet fdResult = './_result'w.fsCleanFolder(fdResult)//fdTaskCpActualSrclet fdTaskCpActualSrc = `./_taskCpActualSrc`w.fsCleanFolder(fdTaskCpActualSrc)//fdTaskCpSrclet fdTaskCpSrc = `./_taskCpSrc`w.fsCleanFolder(fdTaskCpSrc)let opt = {    fdTagRemove,    fdDwStorageTemp,    fdDwStorage,    fdDwAttime,    fdDwCurrent,    fdResultTemp,    fdResult,    fdTaskCpActualSrc,    fdTaskCpSrc,    // fdLog,    // funDownload,    // funGetCurrent,    // funRemove,    // funAdd,    // funModify,}let ev = await WDwdataTweqmp(st, opt)    .catch((err) => {        console.log(err)    })ev.on('change', (msg) => {    delete msg.type    console.log('change', msg)})// change { event: 'start', msg: 'running...' }// change { event: 'proc-callfun-download', msg: 'start...' }// change { event: 'proc-callfun-download', num: 2, msg: 'done' }// change { event: 'proc-callfun-getCurrent', msg: 'start...' }// change { event: 'proc-callfun-getCurrent', num: 0, msg: 'done' }// change { event: 'compare', msg: 'start...' }// change { event: 'compare', numRemove: 0, numAdd: 2, numModify: 0, numSame: 0, msg: 'done' }// change { event: 'proc-add-callfun-add', id: '100000-townshipInt-All.txt', msg: 'start...' }// change { event: 'proc-add-callfun-add', id: '100000-townshipInt-All.txt', msg: 'done' }// change { event: 'proc-add-callfun-add', id: '100001-townshipInt-All.txt', msg: 'start...' }// change { event: 'proc-add-callfun-add', id: '100001-townshipInt-All.txt', msg: 'done' }// ...</code></pre>
 
 
 
@@ -594,6 +594,46 @@
     </thead>
 
     <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fdTagRemove</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'./_tagRemove'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>輸入暫存標記為刪除數據資料夾字串，預設'./_tagRemove'</p></td>
+        </tr>
+
     
 
         <tr>
@@ -1266,7 +1306,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Fri Sep 12 2025 12:04:58 GMT+0800 (台北標準時間) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Fri Sep 12 2025 14:52:21 GMT+0800 (台北標準時間) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

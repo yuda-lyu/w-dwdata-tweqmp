@@ -29,6 +29,7 @@ import parseData from './parseData.mjs'
  * @param {String} [st.password=''] 輸入密碼字串，預設''
  * @param {String} [st.fdIni='./'] 輸入同步資料夾字串，預設'./'
  * @param {Object} [opt={}] 輸入設定物件，預設{}
+ * @param {String} [opt.fdTagRemove='./_tagRemove'] 輸入暫存標記為刪除數據資料夾字串，預設'./_tagRemove'
  * @param {String} [opt.fdDwStorageTemp='./_dwStorageTemp'] 輸入最新下載檔案存放資料夾字串，預設'./_dwStorageTemp'
  * @param {String} [opt.fdDwStorage='./_dwStorage'] 輸入合併儲存檔案資料夾字串，預設'./_dwStorage'
  * @param {String} [opt.fdDwAttime='./_dwAttime'] 輸入當前下載供比對hash用之數據資料夾字串，預設'./_dwAttime'
@@ -58,6 +59,10 @@ import parseData from './parseData.mjs'
  *     'fdIni': './'
  * }
  *
+ * //fdTagRemove
+ * let fdTagRemove = `./_tagRemove`
+ * w.fsCleanFolder(fdTagRemove)
+ *
  * //fdDwStorageTemp
  * let fdDwStorageTemp = `./_dwStorageTemp`
  * w.fsCleanFolder(fdDwStorageTemp)
@@ -82,13 +87,25 @@ import parseData from './parseData.mjs'
  * let fdResult = './_result'
  * w.fsCleanFolder(fdResult)
  *
+ * //fdTaskCpActualSrc
+ * let fdTaskCpActualSrc = `./_taskCpActualSrc`
+ * w.fsCleanFolder(fdTaskCpActualSrc)
+ *
+ * //fdTaskCpSrc
+ * let fdTaskCpSrc = `./_taskCpSrc`
+ * w.fsCleanFolder(fdTaskCpSrc)
+ *
  * let opt = {
+ *     fdTagRemove,
  *     fdDwStorageTemp,
  *     fdDwStorage,
  *     fdDwAttime,
  *     fdDwCurrent,
  *     fdResultTemp,
  *     fdResult,
+ *     fdTaskCpActualSrc,
+ *     fdTaskCpSrc,
+ *     // fdLog,
  *     // funDownload,
  *     // funGetCurrent,
  *     // funRemove,
@@ -129,6 +146,12 @@ let WDwdataTweqmp = async(st, opt = {}) => {
     let useSimulateFiles = get(opt, 'useSimulateFiles')
     if (!isbol(useSimulateFiles)) {
         useSimulateFiles = false
+    }
+
+    //fdTagRemove, 暫存標記為刪除數據資料夾
+    let fdTagRemove = get(opt, 'fdTagRemove')
+    if (!isestr(fdTagRemove)) {
+        fdTagRemove = `./_tagRemove`
     }
 
     //fdDwStorageTemp, 最新下載檔案存放資料夾
@@ -183,6 +206,15 @@ let WDwdataTweqmp = async(st, opt = {}) => {
     }
     if (!fsIsFolder(fdResult)) {
         fsCreateFolder(fdResult)
+    }
+
+    //fdTaskCpActualSrc, 儲存完整任務狀態資料夾
+    let fdTaskCpActualSrc = get(opt, 'fdTaskCpActualSrc')
+    if (!isestr(fdTaskCpActualSrc)) {
+        fdTaskCpActualSrc = `./_taskCpActualSrc`
+    }
+    if (!fsIsFolder(fdTaskCpActualSrc)) {
+        fsCreateFolder(fdTaskCpActualSrc)
     }
 
     //fdTaskCpSrc
@@ -317,11 +349,13 @@ let WDwdataTweqmp = async(st, opt = {}) => {
     let optFtp = {
         useSimulateFiles,
         useExpandOnOldFiles: true, //為增量檔案
+        fdTagRemove,
         fdDwStorageTemp,
         fdDwStorage,
         fdDwAttime,
         fdDwCurrent,
         fdResult,
+        fdTaskCpActualSrc,
         fdTaskCpSrc,
         fdLog,
         funDownload,
