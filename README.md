@@ -12,6 +12,7 @@ A downloader for earthquake PGA data from Taiwan CWA.
 To view documentation or get support, visit [docs](https://yuda-lyu.github.io/w-dwdata-tweqmp/global.html).
 
 ## Installation
+
 ### Using npm(ES6 module):
 ```alias
 npm i w-dwdata-tweqmp
@@ -24,6 +25,7 @@ import w from 'wsemi'
 import WDwdataTweqmp from './src/WDwdataTweqmp.mjs'
 
 let st = {
+    'transportation': 'FTP',
     'hostname': '{hostname}',
     'port': 21,
     'username': '{username}',

@@ -6,6 +6,7 @@ import WDwdataTweqmp from './src/WDwdataTweqmp.mjs'
 
 
 let st = {
+    'transportation': 'FTP',
     'hostname': '{hostname}',
     'port': 21,
     'username': '{username}',
