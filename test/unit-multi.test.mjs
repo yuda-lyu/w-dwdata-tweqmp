@@ -1,8 +1,8 @@
 import fs from 'fs'
-import _ from 'lodash-es'
 import w from 'wsemi'
 import assert from 'assert'
 import WDwdataTweqmp from '../src/WDwdataTweqmp.mjs'
+import fakeFtpServer from './lib/fakeFtpServer.mjs'
 
 
 describe('multi', function() {
@@ -10,60 +10,78 @@ describe('multi', function() {
     let test = async() => {
         let ms = []
 
-        let st = {} //開啟useSimulateFiles=true直接模擬ftp下載數據
+        //tag
+        let tag = `_multi`
+
+        //fdSrv, 假FTP伺服器根目錄, 供模擬待下載之地震數據
+        let fdSrv = `./${tag}_srv`
+        w.fsCleanFolder(fdSrv)
+
+        //srv, port給0由系統指派, 避免平行測試時衝突
+        let srv = await fakeFtpServer({ fdRoot: fdSrv })
+
+        //st, 連線至假伺服器
+        let st = {
+            transportation: 'FTP',
+            hostname: '127.0.0.1',
+            port: srv.port,
+            username: 'u1',
+            password: 'p1',
+            fdIni: '.',
+        }
 
         //fdTagRemove
-        let fdTagRemove = `./_multi_tagRemove`
+        let fdTagRemove = `./${tag}_tagRemove`
         w.fsCleanFolder(fdTagRemove)
 
         //fdDwStorageTemp
-        let fdDwStorageTemp = `./_multi_dwStorageTemp`
+        let fdDwStorageTemp = `./${tag}_dwStorageTemp`
         w.fsCleanFolder(fdDwStorageTemp)
 
         //fdDwStorage
-        let fdDwStorage = `./_multi_dwStorage`
+        let fdDwStorage = `./${tag}_dwStorage`
         w.fsCleanFolder(fdDwStorage)
 
         //fdDwAttime
-        let fdDwAttime = `./_multi_dwAttime`
+        let fdDwAttime = `./${tag}_dwAttime`
         w.fsCleanFolder(fdDwAttime)
 
         //fdDwCurrent
-        let fdDwCurrent = `./_multi_dwCurrent`
+        let fdDwCurrent = `./${tag}_dwCurrent`
         w.fsCleanFolder(fdDwCurrent)
 
         //fdResultTemp
-        let fdResultTemp = './_multi_resultTemp'
+        let fdResultTemp = `./${tag}_resultTemp`
         w.fsCleanFolder(fdResultTemp)
 
         //fdResult
-        let fdResult = './_multi_result'
+        let fdResult = `./${tag}_result`
         w.fsCleanFolder(fdResult)
 
         //fdTaskCpActualSrc
-        let fdTaskCpActualSrc = `./_multi_taskCpActualSrc`
+        let fdTaskCpActualSrc = `./${tag}_taskCpActualSrc`
         w.fsCleanFolder(fdTaskCpActualSrc)
 
         //fdTaskCpSrc
-        let fdTaskCpSrc = `./_multi_taskCpSrc`
+        let fdTaskCpSrc = `./${tag}_taskCpSrc`
         w.fsCleanFolder(fdTaskCpSrc)
 
         let kpOper = {
             1: () => {
-                w.fsCopyFile(`./test/100000-townshipInt-All.txt`, `${fdDwStorageTemp}/100000-townshipInt-All.txt`)
+                w.fsCopyFile(`./test/100000-townshipInt-All.txt`, `${fdSrv}/100000-townshipInt-All.txt`)
             },
             2: () => { //add 100001
-                w.fsCopyFile(`./test/100000-townshipInt-All.txt`, `${fdDwStorageTemp}/100000-townshipInt-All.txt`)
-                w.fsCopyFile(`./test/100001-townshipInt-All.txt`, `${fdDwStorageTemp}/100001-townshipInt-All.txt`)
+                w.fsCopyFile(`./test/100000-townshipInt-All.txt`, `${fdSrv}/100000-townshipInt-All.txt`)
+                w.fsCopyFile(`./test/100001-townshipInt-All.txt`, `${fdSrv}/100001-townshipInt-All.txt`)
             },
             3: () => { //modify 100001
-                w.fsCopyFile(`./test/100000-townshipInt-All.txt`, `${fdDwStorageTemp}/100000-townshipInt-All.txt`)
+                w.fsCopyFile(`./test/100000-townshipInt-All.txt`, `${fdSrv}/100000-townshipInt-All.txt`)
                 let c = fs.readFileSync(`./test/100001-townshipInt-All.txt`, 'utf8')
                 c = c.replace(
                     `Stalon=121.467,Stalat=25.126,震度0級,PGA(V)= 235.44,PGA(NS)= 235.44,PGA(EW)= 235.44`,
                     `Stalon=121.467,Stalat=25.126,震度0級,PGA(V)= 225.99,PGA(NS)= 215.85,PGA(EW)= 202.53`,
                 )
-                fs.writeFileSync(`${fdDwStorageTemp}/100001-townshipInt-All.txt`, c, 'utf8')
+                fs.writeFileSync(`${fdSrv}/100001-townshipInt-All.txt`, c, 'utf8')
             },
         }
 
@@ -73,11 +91,10 @@ describe('multi', function() {
 
             let pm = w.genPm()
 
-            //依照i模擬ftp下載數據
+            //依照i更新假伺服器內待下載檔案
             kpOper[i]()
 
             let opt = {
-                useSimulateFiles: true, //模擬ftp下載數據
                 fdTagRemove,
                 fdDwStorageTemp,
                 fdDwStorage,
@@ -87,7 +104,8 @@ describe('multi', function() {
                 fdResult,
                 fdTaskCpActualSrc,
                 fdTaskCpSrc,
-            // fdLog,
+                // srLog,
+                // useShowLog,
                 // funDownload,
                 // funGetCurrent,
                 // funRemove,
@@ -126,6 +144,9 @@ describe('multi', function() {
             await run()
         })
 
+        await srv.close()
+
+        w.fsDeleteFolder(fdSrv)
         w.fsDeleteFolder(fdTagRemove)
         w.fsDeleteFolder(fdDwStorageTemp)
         w.fsDeleteFolder(fdDwStorage)

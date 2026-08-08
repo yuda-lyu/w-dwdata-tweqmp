@@ -1,10 +1,9 @@
 {
   "name": "w-dwdata-tweqmp",
-  "version": "1.0.40",
+  "version": "1.0.41",
   "main": "dist/w-dwdata-tweqmp.umd.js",
   "dependencies": {
-    "axios": "^1.12.2",
-    "w-dwdata-ftp": "^1.0.40",
+    "w-dwdata-ftp": "^1.0.41",
     "wsemi": "^1.8.70"
   },
   "devDependencies": {

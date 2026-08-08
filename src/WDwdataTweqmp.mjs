@@ -38,13 +38,14 @@ import parseData from './parseData.mjs'
  * @param {String} [opt.fdResult='./_result'] 輸入已下載數據所連動生成數據資料夾字串，預設'./_result'
  * @param {String} [opt.fdTaskCpActualSrc='./_taskCpActualSrc'] 輸入任務狀態之來源端完整資料夾字串，預設'./_taskCpActualSrc'
  * @param {String} [opt.fdTaskCpSrc='./_taskCpSrc'] 輸入任務狀態之來源端資料夾字串，預設'./_taskCpSrc'
- * @param {String} [opt.fdLog='./_logs'] 輸入儲存log資料夾字串，預設'./_logs'
  * @param {Function} [opt.funDownload=null] 輸入當前下載數據hash之函數，回傳資料陣列，預設null
  * @param {Function} [opt.funGetCurrent=null] 輸入已下載數據hash之函數，回傳資料陣列，預設null
  * @param {Function} [opt.funAdd=null] 輸入當有新資料時，需要連動處理之函數，預設null
  * @param {Function} [opt.funModify=null] 輸入當有資料需更新時，需要連動處理之函數，預設null
  * @param {Function} [opt.funRemove=null] 輸入當有資料需刪除時，需要連動處理之函數，預設null
  * @param {Number} [opt.timeToleranceRemove=0] 輸入刪除任務之防抖時長，單位ms，預設0，代表不使用
+ * @param {Object} [opt.srLog=null] 輸入事件紀錄物件，需提供函數info、warn與error，各接收一紀錄物件，供下載FTP檔案與偵測數據變更時紀錄各階段事件，未提供時不進行紀錄，其中warn目前保留未使用，預設null
+ * @param {Boolean} [opt.useShowLog=true] 輸入是否於偵測數據變更過程將錯誤與取消訊息輸出至console布林值，下載FTP檔案階段本身不輸出至console，惟其錯誤往上拋出後仍受此設定影響，預設true
  * @returns {Object} 回傳事件物件，可呼叫函數on監聽change事件
  * @example
  *
@@ -106,7 +107,8 @@ import parseData from './parseData.mjs'
  *     fdResult,
  *     fdTaskCpActualSrc,
  *     fdTaskCpSrc,
- *     // fdLog,
+ *     // srLog,
+ *     // useShowLog,
  *     // funDownload,
  *     // funGetCurrent,
  *     // funRemove,
@@ -142,12 +144,6 @@ let WDwdataTweqmp = async(st, opt = {}) => {
     // if (!isbol(useExpandOnOldFiles)) {
     //     useExpandOnOldFiles = false
     // }
-
-    //useSimulateFiles, 供測試用, 檔案得預先給予至fdDwStorageTemp
-    let useSimulateFiles = get(opt, 'useSimulateFiles')
-    if (!isbol(useSimulateFiles)) {
-        useSimulateFiles = false
-    }
 
     //fdTagRemove, 暫存標記為刪除數據資料夾
     let fdTagRemove = get(opt, 'fdTagRemove')
@@ -227,13 +223,13 @@ let WDwdataTweqmp = async(st, opt = {}) => {
         fsCreateFolder(fdTaskCpSrc)
     }
 
-    //fdLog
-    let fdLog = get(opt, 'fdLog')
-    if (!isestr(fdLog)) {
-        fdLog = './_logs'
-    }
-    if (!fsIsFolder(fdLog)) {
-        fsCreateFolder(fdLog)
+    //srLog
+    let srLog = get(opt, 'srLog', null)
+
+    //useShowLog
+    let useShowLog = get(opt, 'useShowLog')
+    if (!isbol(useShowLog)) {
+        useShowLog = true
     }
 
     //funDownload
@@ -348,17 +344,15 @@ let WDwdataTweqmp = async(st, opt = {}) => {
     }
 
     let optFtp = {
-        useSimulateFiles,
         useExpandOnOldFiles: true, //為增量檔案
         fdTagRemove,
         fdDwStorageTemp,
         fdDwStorage,
         fdDwAttime,
         fdDwCurrent,
-        fdResult,
+        fdResult, //funAdd、funModify與funRemove皆已於此覆寫，故WDwdataFtp內不使用fdResult，惟其未給予時仍會創建預設資料夾，故仍須給予
         fdTaskCpActualSrc,
         fdTaskCpSrc,
-        fdLog,
         funDownload,
         funGetCurrent,
         funRemove,
@@ -367,6 +361,8 @@ let WDwdataTweqmp = async(st, opt = {}) => {
         funAfterStart,
         funBeforeEnd,
         timeToleranceRemove,
+        srLog,
+        useShowLog,
     }
     let ev = await WDwdataFtp(st, optFtp)
 

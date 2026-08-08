@@ -1,8 +1,7 @@
-import fs from 'fs'
-import _ from 'lodash-es'
 import w from 'wsemi'
 import assert from 'assert'
 import WDwdataTweqmp from '../src/WDwdataTweqmp.mjs'
+import fakeFtpServer from './lib/fakeFtpServer.mjs'
 
 
 describe('once', function() {
@@ -13,49 +12,66 @@ describe('once', function() {
 
         let ms = []
 
-        let st = {} //開啟useSimulateFiles=true直接模擬ftp下載數據
+        //tag
+        let tag = `_once`
 
-        //fdDwStorageTemp
-        let fdDwStorageTemp = `./_once_dwStorageTemp`
-        w.fsCleanFolder(fdDwStorageTemp)
+        //fdSrv, 假FTP伺服器根目錄, 供模擬待下載之地震數據
+        let fdSrv = `./${tag}_srv`
+        w.fsCleanFolder(fdSrv)
 
-        w.fsCopyFile(`./test/100000-townshipInt-All.txt`, `${fdDwStorageTemp}/100000-townshipInt-All.txt`)
-        w.fsCopyFile(`./test/100001-townshipInt-All.txt`, `${fdDwStorageTemp}/100001-townshipInt-All.txt`)
+        w.fsCopyFile(`./test/100000-townshipInt-All.txt`, `${fdSrv}/100000-townshipInt-All.txt`)
+        w.fsCopyFile(`./test/100001-townshipInt-All.txt`, `${fdSrv}/100001-townshipInt-All.txt`)
+
+        //srv, port給0由系統指派, 避免平行測試時衝突
+        let srv = await fakeFtpServer({ fdRoot: fdSrv })
+
+        //st, 連線至假伺服器
+        let st = {
+            transportation: 'FTP',
+            hostname: '127.0.0.1',
+            port: srv.port,
+            username: 'u1',
+            password: 'p1',
+            fdIni: '.',
+        }
 
         //fdTagRemove
-        let fdTagRemove = `./_once_tagRemove`
+        let fdTagRemove = `./${tag}_tagRemove`
         w.fsCleanFolder(fdTagRemove)
 
+        //fdDwStorageTemp
+        let fdDwStorageTemp = `./${tag}_dwStorageTemp`
+        w.fsCleanFolder(fdDwStorageTemp)
+
         //fdDwStorage
-        let fdDwStorage = `./_once_dwStorage`
+        let fdDwStorage = `./${tag}_dwStorage`
         w.fsCleanFolder(fdDwStorage)
 
         //fdDwAttime
-        let fdDwAttime = `./_once_dwAttime`
+        let fdDwAttime = `./${tag}_dwAttime`
         w.fsCleanFolder(fdDwAttime)
 
         //fdDwCurrent
-        let fdDwCurrent = `./_once_dwCurrent`
+        let fdDwCurrent = `./${tag}_dwCurrent`
         w.fsCleanFolder(fdDwCurrent)
 
         //fdResultTemp
-        let fdResultTemp = './_once_resultTemp'
+        let fdResultTemp = `./${tag}_resultTemp`
         w.fsCleanFolder(fdResultTemp)
 
         //fdResult
-        let fdResult = './_once_result'
+        let fdResult = `./${tag}_result`
         w.fsCleanFolder(fdResult)
 
         //fdTaskCpActualSrc
-        let fdTaskCpActualSrc = `./_once_taskCpActualSrc`
+        let fdTaskCpActualSrc = `./${tag}_taskCpActualSrc`
         w.fsCleanFolder(fdTaskCpActualSrc)
 
         //fdTaskCpSrc
-        let fdTaskCpSrc = `./_once_taskCpSrc`
+        let fdTaskCpSrc = `./${tag}_taskCpSrc`
         w.fsCleanFolder(fdTaskCpSrc)
 
         let opt = {
-            useSimulateFiles: true, //模擬ftp下載數據
             fdTagRemove,
             fdDwStorageTemp,
             fdDwStorage,
@@ -65,7 +81,8 @@ describe('once', function() {
             fdResult,
             fdTaskCpActualSrc,
             fdTaskCpSrc,
-            // fdLog,
+            // srLog,
+            // useShowLog,
             // funDownload,
             // funGetCurrent,
             // funRemove,
@@ -84,8 +101,11 @@ describe('once', function() {
             // console.log('change', msg)
             ms.push(msg)
         })
-        ev.on('end', () => {
+        ev.on('end', async() => {
 
+            await srv.close()
+
+            w.fsDeleteFolder(fdSrv)
             w.fsDeleteFolder(fdTagRemove)
             w.fsDeleteFolder(fdDwStorageTemp)
             w.fsDeleteFolder(fdDwStorage)
@@ -140,8 +160,6 @@ describe('once', function() {
             msg: 'done'
         },
         { event: 'proc-callfun-beforeEnd', msg: 'start...' },
-        { event: 'move-files-to-storage', msg: 'start...' },
-        { event: 'move-files-to-storage', msg: 'done' },
         { event: 'proc-callfun-beforeEnd', msg: 'done' },
         { event: 'end', msg: 'done' }
     ]
