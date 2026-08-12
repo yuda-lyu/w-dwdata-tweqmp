@@ -18,8 +18,7 @@ rollupFiles({
 
         'path': 'path',
         'fs': 'fs',
-        'url': 'url',
-        'pino': 'pino',
+        'crypto': 'crypto',
         'events': 'events',
         'chokidar': 'chokidar',
 
@@ -34,15 +33,12 @@ rollupFiles({
         'debug': 'debug',
         'ssh2-sftp-client': 'ssh2-sftp-client',
 
-        'xxhash-wasm': 'xxhash-wasm',
-
     },
     external: [
 
         'path',
         'fs',
-        'url',
-        'pino',
+        'crypto',
         'events',
         'chokidar',
 
@@ -56,8 +52,6 @@ rollupFiles({
         'unorm',
         'debug',
         'ssh2-sftp-client',
-
-        'xxhash-wasm',
 
     ],
 })
