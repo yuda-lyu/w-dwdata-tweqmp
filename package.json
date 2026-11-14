@@ -1,10 +1,10 @@
 {
   "name": "w-dwdata-tweqmp",
-  "version": "1.1.21",
+  "version": "1.1.22",
   "main": "dist/w-dwdata-tweqmp.umd.js",
   "dependencies": {
-    "w-dwdata-ftp": "^1.1.22",
-    "wsemi": "^1.9.59"
+    "w-dwdata-ftp": "^1.1.23",
+    "wsemi": "^1.9.60"
   },
   "devDependencies": {
     "w-package-tools": "^1.1.28"
