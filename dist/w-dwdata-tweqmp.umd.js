@@ -1,5 +1,5 @@
 /*!
- * w-dwdata-tweqmp v1.1.23
+ * w-dwdata-tweqmp v1.1.24
  * (c) 2018-2021 yuda-lyu(semisphere)
  * Released under the MIT License.
  */
