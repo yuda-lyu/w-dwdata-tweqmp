@@ -29,7 +29,7 @@
 <nav >
     
     
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#WDwdataTweqmp">WDwdataTweqmp</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#WDwdataTweqmp">WDwdataTweqmp</a></li><li><a href="global.html#checkData">checkData</a></li><li><a href="global.html#parseData">parseData</a></li></ul>
     
 </nav>
 
@@ -142,13 +142,18 @@
     <dt class="tag-description">Description:</dt>
     <dd class="tag-description"><ul class="dummy"><li><p>基於檔案之下載台灣氣象署FTP地震數據與任務建構器</p>
 <p>執行階段最新hash數據放置於fdDwAttime，前次hash數據會於結束前自動備份至fdDwCurrent</p>
-<p>執行階段最新數據放置於fdDwStorageTemp，前次數據放置於fdDwStorage，於結束前會將fdDwStorage清空，將fdDwStorageTemp複製至fdDwStorage</p></li></ul></dd>
+<p>執行階段最新數據放置於fdDwStorageTemp，前次數據放置於fdDwStorage，於結束前會將fdDwStorage清空，將fdDwStorageTemp複製至fdDwStorage</p>
+<p>預設之funAdd與funModify於解析數據檔前會先以checkData檢測內容，內容殘缺(傳輸中斷之殘檔等)時不寫出任何結果、不動既有結果，
+改以事件紀錄(type為error，event為proc-add-check-data或proc-diff-check-data，msg為checkData之固定詞彙訊息，不含內容)通知後略過該檔，
+不中止本輪其餘檔案之處理；該檔已隨本輪下載進入fdDwStorage，待下輪遠端檔案重新下載後hash不同時，會再以modify處理。
+自訂funAdd與funModify若呼叫parseData，遇殘缺內容時parseData會拋錯，w-dwdata-ftp所用之排程器(w-data-scheduler)將取消本輪其餘檔案之處理，須自行try-catch或先以checkData檢測</p>
+<p>預設流程略過之新增檔案，排程器仍視為已處理並記入任務清單(fdTaskCpSrc)，故下游依任務清單取用者，須另依type為error之事件判斷該檔是否已有結果</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="WDwdataTweqmp.mjs.html">WDwdataTweqmp.mjs</a>, <a href="WDwdataTweqmp.mjs.html#line140">line 140</a>
+        <a href="WDwdataTweqmp.mjs.html">WDwdataTweqmp.mjs</a>, <a href="WDwdataTweqmp.mjs.html#line149">line 149</a>
     </li></ul></dd>
     
 
@@ -1231,7 +1236,7 @@
                 </td>
             
 
-            <td class="description last"><p>輸入事件紀錄物件，需提供函數info、warn與error，各接收一紀錄物件，供下載FTP檔案與偵測數據變更時紀錄各階段事件，未提供時不進行紀錄，其中warn目前保留未使用，預設null</p></td>
+            <td class="description last"><p>輸入事件紀錄物件，需提供函數info、warn與error，各接收一紀錄物件，供下載FTP檔案與偵測數據變更時紀錄各階段事件，未提供時不進行紀錄，其中warn目前保留未使用，預設之funAdd與funModify略過殘缺檔案時亦經error紀錄，預設null</p></td>
         </tr>
 
     
@@ -1271,7 +1276,7 @@
                 </td>
             
 
-            <td class="description last"><p>輸入是否於偵測數據變更過程將錯誤與取消訊息輸出至console布林值，下載FTP檔案階段本身不輸出至console，惟其錯誤往上拋出後仍受此設定影響，預設true</p></td>
+            <td class="description last"><p>輸入是否於偵測數據變更過程將錯誤與取消訊息輸出至console布林值，下載FTP檔案階段本身不輸出至console，惟其錯誤往上拋出後仍受此設定影響，預設之funAdd與funModify略過殘缺檔案時亦依此設定輸出一行至console，預設true</p></td>
         </tr>
 
     
@@ -1327,6 +1332,339 @@
 
 
         
+            
+
+    
+
+    <h4 class="name" id="checkData"><span class="type-signature"></span>checkData<span class="signature">(c)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>檢測台灣氣象署地震PGA數據檔(*-townshipInt-All.txt)內容是否完整可解析，不拋錯</p>
+<p>判準取自使用端提供之真實檔語料(3693檔)之共同結構，供使用端於接收檔案時先行驗證，亦為parseData之前置檢測，兩者判定一致：</p>
+<p>1.輸入須為字串，且不含NUL字元與取代字元U+FFFD(NUL填充與編碼損毀之徵象)</p>
+<p>2.須恰有1行「觀測時間：」，其值須為真實存在之日期時間，格式YYYY-MM-DD HH:mm:ss(UTC+0，加8小時後須仍為4位數年份，以使parseData之id為14位數字)</p>
+<p>3.每一Staname=起始行須為完整測站列：依序為Staname、Stacode、Stalon、Stalat、震度、PGA(V)、PGA(NS)、PGA(EW)共8欄，或其後再加PGV(V)、PGV(NS)、PGV(EW)共11欄，各欄值非空</p>
+<p>4.至少須有1筆測站列</p>
+<p>5.內容須以換行結束(真實檔3693檔皆是)，用以偵測傳輸中斷所致之尾端截斷</p>
+<p>不檢查測站數、縣市與末站等氣象署設定面之值(日後設定變更時會誤拒完整檔)</p>
+<p>限制：恰於換行處被截斷、且已含至少1筆測站列之檔案，其結構與完整檔相同，無法於內容層偵測，須於下載層以遠端檔案大小核對</p>
+<p>失敗訊息為固定詞彙，只含參數名與位置(行號)，不含內容</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="checkData.mjs.html">checkData.mjs</a>, <a href="checkData.mjs.html#line83">line 83</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>let r = checkData('觀測時間：2021-12-31 16:00:00\n')console.log(r)// => { ok: false, msg: 'invalid c: must contain at least one station record' }</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>c</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>輸入氣象署地震PGA數據檔之文字內容字串，種類為字串(可為空字串，但空字串無效)，非字串時回傳失敗，不拋錯</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>回傳檢測結果物件，ok為布林，內容有效為true；msg為字串，有效時為空字串，無效時為固定詞彙之錯誤訊息，如'invalid c: must end with a line break'</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="parseData"><span class="type-signature"></span>parseData<span class="signature">(c)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>解析台灣氣象署地震PGA數據檔(*-townshipInt-All.txt)內容</p>
+<p>內容不完整或非預期(非字串、無有效觀測時間、含NUL、測站列不完整、無測站列、非以換行結束)時同步拋錯，
+不回傳id為'Invalid Date'之物件，錯誤訊息為固定詞彙(格式見checkData)，不含內容；
+呼叫端以eq.id為檔名寫檔時，須以try-catch略過拋錯之檔案，或先以checkData檢測</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="parseData.mjs.html">parseData.mjs</a>, <a href="parseData.mjs.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>c</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>輸入氣象署地震PGA數據檔之文字內容字串，種類為字串(必給)，無效時拋錯</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>回傳地震物件，內含id、time、timeRec、timeTag、duration與data(測站數據陣列)</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
     
 
     
@@ -1346,7 +1684,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Thu Nov 26 2026 02:21:21 GMT+0800 (台北標準時間) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Thu Nov 26 2026 13:07:58 GMT+0800 (台北標準時間) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
