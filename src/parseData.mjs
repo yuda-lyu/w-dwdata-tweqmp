@@ -8,8 +8,19 @@ import cdbl from 'wsemi/src/cdbl.mjs'
 import strleft from 'wsemi/src/strleft.mjs'
 import strright from 'wsemi/src/strright.mjs'
 import ot from 'dayjs'
+import checkData from './checkData.mjs'
 
 
+/**
+ * 解析台灣氣象署地震PGA數據檔(*-townshipInt-All.txt)內容
+ *
+ * 內容不完整或非預期(非字串、無有效觀測時間、含NUL、測站列不完整、無測站列、非以換行結束)時同步拋錯，
+ * 不回傳id為'Invalid Date'之物件，錯誤訊息為固定詞彙(格式見checkData)，不含內容；
+ * 呼叫端以eq.id為檔名寫檔時，須以try-catch略過拋錯之檔案，或先以checkData檢測
+ *
+ * @param {String} c 輸入氣象署地震PGA數據檔之文字內容字串，種類為字串(必給)，無效時拋錯
+ * @returns {Object} 回傳地震物件，內含id、time、timeRec、timeTag、duration與data(測站數據陣列)
+ */
 let parseData = (c) => {
     //content:
     // 全國>> 震度顯示>>
@@ -19,6 +30,12 @@ let parseData = (c) => {
     // Staname=  北投區,Stacode=A002,Stalon=121.467,Stalat=25.126,震度0級,PGA(V)= 313.0,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
     // Staname=  士林區,Stacode=A006,Stalon=121.515,Stalat=25.094,震度0級,PGA(V)= 313.6,PGA(NS)= 313.6,PGA(EW)= 313.6,PGV(V)= -1.000,PGV(NS)= -1.000,PGV(EW)= -1.000
     // ...
+
+    //check, 檢測先於解析, 殘缺內容(傳輸中斷之殘檔等)須拋錯, 不得以'Invalid Date'為id回傳
+    let r = checkData(c)
+    if (!r.ok) {
+        throw new Error(r.msg)
+    }
 
     //lines
     let lines = sep(c, '\n')

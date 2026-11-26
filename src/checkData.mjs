@@ -1,0 +1,150 @@
+import trim from 'lodash-es/trim.js'
+
+
+//名稱常數, 訊息格式為: invalid <名稱>: must be <種類描述>, 英文小寫開頭固定詞彙, 只帶位置(行號)不回顯內容
+//文字內容類之描述詞彙(observation time line, line break, station record)為本套件所定
+let msgOk = ''
+let msgType = 'invalid c: must be a string'
+let msgNul = 'invalid c: must not contain a NUL character'
+let msgRepl = 'invalid c: must not contain a replacement character'
+let msgTimeLine = 'invalid c: must contain exactly one observation time line'
+let msgTime = 'invalid c.observationTime: must be a date time string YYYY-MM-DD HH:mm:ss'
+let msgNoSta = 'invalid c: must contain at least one station record'
+let msgEol = 'invalid c: must end with a line break'
+let msgSta = (n) => {
+    return `invalid c.line[${n}]: must be a complete station record` //n為檔內第n行(自1起算)
+}
+
+//chRepl, U+FFFD取代字元, 以utf8解碼遇損毀或被截斷之位元組時產生(以碼位指定, 避免原始碼內出現不可見字元)
+let chRepl = String.fromCharCode(0xFFFD)
+
+//reTime, 觀測時間之值, 真實檔皆為此格式
+let reTime = /^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})$/
+
+//rv, 測站列內單一欄位之值, 去頭尾空白後至少1字元且不含逗號, 不限數值格式(真實檔內另有'---.---'與'-'等無數據占位字樣)
+let rv = '\\s*[^,\\s][^,]*'
+
+//reSta, 測站列之結構, 前8欄(測站名,代碼,經度,緯度,震度,PGA三向)必有, 後3欄(PGV三向)選用, 真實檔內8欄與11欄皆有
+let reSta = new RegExp(
+    `^Staname=${rv},Stacode=${rv},Stalon=${rv},Stalat=${rv},震度${rv},PGA\\(V\\)=${rv},PGA\\(NS\\)=${rv},PGA\\(EW\\)=${rv}` +
+    `(?:,PGV\\(V\\)=${rv},PGV\\(NS\\)=${rv},PGV\\(EW\\)=${rv})?$`
+)
+
+//msShift與msMax, parseData將UTC+0之觀測時間加8小時後以YYYYMMDDHHmmss為id, 加後須仍為4位數年份, 否則id無法為14位數字(dayjs回傳'Invalid Date')
+let msShift = 8 * 3600 * 1000
+let msMax = Date.UTC(9999, 11, 31, 23, 59, 59)
+
+//isDateTime, 是否為真實存在之日期時間, 且加8小時後仍可為14位數字之id
+let isDateTime = (y, mo, d, h, mi, s) => {
+    let t = new Date(Date.UTC(y, mo - 1, d, h, mi, s))
+    return t.getUTCFullYear() === y && t.getUTCMonth() === mo - 1 && t.getUTCDate() === d && t.getUTCHours() === h && t.getUTCMinutes() === mi && t.getUTCSeconds() === s && t.getTime() + msShift <= msMax
+}
+
+//isEndWithEol, 內容去除尾端空白(不含換行)後是否以換行結束, 自尾端逐字元檢查以避免正規式於長空白串之二次方回溯
+let isEndWithEol = (c) => {
+    let i = c.length - 1
+    while (i >= 0 && (c[i] === ' ' || c[i] === '\t' || c[i] === '\r')) {
+        i--
+    }
+    return i >= 0 && c[i] === '\n'
+}
+
+
+/**
+ * 檢測台灣氣象署地震PGA數據檔(*-townshipInt-All.txt)內容是否完整可解析，不拋錯
+ *
+ * 判準取自使用端提供之真實檔語料(3693檔)之共同結構，供使用端於接收檔案時先行驗證，亦為parseData之前置檢測，兩者判定一致：
+ *
+ * 1.輸入須為字串，且不含NUL字元與取代字元U+FFFD(NUL填充與編碼損毀之徵象)
+ *
+ * 2.須恰有1行「觀測時間：」，其值須為真實存在之日期時間，格式YYYY-MM-DD HH:mm:ss(UTC+0，加8小時後須仍為4位數年份，以使parseData之id為14位數字)
+ *
+ * 3.每一Staname=起始行須為完整測站列：依序為Staname、Stacode、Stalon、Stalat、震度、PGA(V)、PGA(NS)、PGA(EW)共8欄，或其後再加PGV(V)、PGV(NS)、PGV(EW)共11欄，各欄值非空
+ *
+ * 4.至少須有1筆測站列
+ *
+ * 5.內容須以換行結束(真實檔3693檔皆是)，用以偵測傳輸中斷所致之尾端截斷
+ *
+ * 不檢查測站數、縣市與末站等氣象署設定面之值(日後設定變更時會誤拒完整檔)
+ *
+ * 限制：恰於換行處被截斷、且已含至少1筆測站列之檔案，其結構與完整檔相同，無法於內容層偵測，須於下載層以遠端檔案大小核對
+ *
+ * 失敗訊息為固定詞彙，只含參數名與位置(行號)，不含內容
+ *
+ * @param {String} c 輸入氣象署地震PGA數據檔之文字內容字串，種類為字串(可為空字串，但空字串無效)，非字串時回傳失敗，不拋錯
+ * @returns {Object} 回傳檢測結果物件，ok為布林，內容有效為true；msg為字串，有效時為空字串，無效時為固定詞彙之錯誤訊息，如'invalid c: must end with a line break'
+ * @example
+ *
+ * let r = checkData('觀測時間：2021-12-31 16:00:00\n')
+ * console.log(r)
+ * // => { ok: false, msg: 'invalid c: must contain at least one station record' }
+ *
+ */
+let checkData = (c) => {
+
+    //c, 一般參數必給且須為字串
+    if (typeof c !== 'string') {
+        return { ok: false, msg: msgType }
+    }
+
+    //NUL, 傳輸中斷或磁碟異常時可能以NUL填充
+    if (c.indexOf('\u0000') >= 0) {
+        return { ok: false, msg: msgNul }
+    }
+
+    //取代字元, 以utf8讀取遇損毀位元組時產生
+    if (c.indexOf(chRepl) >= 0) {
+        return { ok: false, msg: msgRepl }
+    }
+
+    //逐行檢查, 與parseData相同先trim再依相同順序分類(觀測時間行, 觀測長度行, 縣市行, 測站列), 故可相容CRLF行尾與行首尾空白, 且兩者對測站列之認定一致
+    let lines = c.split('\n')
+    let nTime = 0
+    let timeStr = ''
+    let nSta = 0
+    let lineStaBad = 0
+    for (let i = 0; i < lines.length; i++) {
+        let v = trim(lines[i])
+
+        if (v.indexOf('觀測時間：') >= 0) {
+            nTime++
+            timeStr = trim(v.replace('觀測時間：', ''))
+        }
+        else if (v.indexOf('觀測長度(秒)：') >= 0 || v.slice(-2) === '>>') {
+            //非測站列, parseData於此二類行不解析測站
+        }
+        else if (v.indexOf('Staname=') === 0) {
+            nSta++
+            if (lineStaBad === 0 && !reSta.test(v)) {
+                lineStaBad = i + 1
+            }
+        }
+    }
+
+    //觀測時間
+    if (nTime !== 1) {
+        return { ok: false, msg: msgTimeLine }
+    }
+    let m = reTime.exec(timeStr)
+    if (m === null || !isDateTime(Number(m[1]), Number(m[2]), Number(m[3]), Number(m[4]), Number(m[5]), Number(m[6]))) {
+        return { ok: false, msg: msgTime }
+    }
+
+    //測站列, 先報不完整之列, 再報無測站列
+    if (lineStaBad > 0) {
+        return { ok: false, msg: msgSta(lineStaBad) }
+    }
+    if (nSta === 0) {
+        return { ok: false, msg: msgNoSta }
+    }
+
+    //尾端換行
+    if (!isEndWithEol(c)) {
+        return { ok: false, msg: msgEol }
+    }
+
+    return { ok: true, msg: msgOk }
+}
+
+
+export default checkData

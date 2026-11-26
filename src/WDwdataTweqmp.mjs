@@ -4,6 +4,7 @@ import isestr from 'wsemi/src/isestr.mjs'
 import isbol from 'wsemi/src/isbol.mjs'
 import isp0int from 'wsemi/src/isp0int.mjs'
 import isfun from 'wsemi/src/isfun.mjs'
+import ispm from 'wsemi/src/ispm.mjs'
 import cdbl from 'wsemi/src/cdbl.mjs'
 import fsIsFolder from 'wsemi/src/fsIsFolder.mjs'
 import fsCleanFolder from 'wsemi/src/fsCleanFolder.mjs'
@@ -11,6 +12,7 @@ import fsCreateFolder from 'wsemi/src/fsCreateFolder.mjs'
 import fsCopyFolder from 'wsemi/src/fsCopyFolder.mjs'
 import fsDeleteFolder from 'wsemi/src/fsDeleteFolder.mjs'
 import WDwdataFtp from 'w-dwdata-ftp/src/WDwdataFtp.mjs'
+import checkData from './checkData.mjs'
 import parseData from './parseData.mjs'
 
 
@@ -20,6 +22,13 @@ import parseData from './parseData.mjs'
  * 執行階段最新hash數據放置於fdDwAttime，前次hash數據會於結束前自動備份至fdDwCurrent
  *
  * 執行階段最新數據放置於fdDwStorageTemp，前次數據放置於fdDwStorage，於結束前會將fdDwStorage清空，將fdDwStorageTemp複製至fdDwStorage
+ *
+ * 預設之funAdd與funModify於解析數據檔前會先以checkData檢測內容，內容殘缺(傳輸中斷之殘檔等)時不寫出任何結果、不動既有結果，
+ * 改以事件紀錄(type為error，event為proc-add-check-data或proc-diff-check-data，msg為checkData之固定詞彙訊息，不含內容)通知後略過該檔，
+ * 不中止本輪其餘檔案之處理；該檔已隨本輪下載進入fdDwStorage，待下輪遠端檔案重新下載後hash不同時，會再以modify處理。
+ * 自訂funAdd與funModify若呼叫parseData，遇殘缺內容時parseData會拋錯，w-dwdata-ftp所用之排程器(w-data-scheduler)將取消本輪其餘檔案之處理，須自行try-catch或先以checkData檢測
+ *
+ * 預設流程略過之新增檔案，排程器仍視為已處理並記入任務清單(fdTaskCpSrc)，故下游依任務清單取用者，須另依type為error之事件判斷該檔是否已有結果
  *
  * @param {String} st 輸入設定FTP連線資訊物件
  * @param {String} [st.transportation='FTP'] 輸入傳輸協定字串，可選'FTP'、'SFTP'，預設'FTP'
@@ -44,8 +53,8 @@ import parseData from './parseData.mjs'
  * @param {Function} [opt.funModify=null] 輸入當有資料需更新時，需要連動處理之函數，預設null
  * @param {Function} [opt.funRemove=null] 輸入當有資料需刪除時，需要連動處理之函數，預設null
  * @param {Number} [opt.timeToleranceRemove=0] 輸入刪除任務之防抖時長，單位ms，預設0，代表不使用
- * @param {Object} [opt.srLog=null] 輸入事件紀錄物件，需提供函數info、warn與error，各接收一紀錄物件，供下載FTP檔案與偵測數據變更時紀錄各階段事件，未提供時不進行紀錄，其中warn目前保留未使用，預設null
- * @param {Boolean} [opt.useShowLog=true] 輸入是否於偵測數據變更過程將錯誤與取消訊息輸出至console布林值，下載FTP檔案階段本身不輸出至console，惟其錯誤往上拋出後仍受此設定影響，預設true
+ * @param {Object} [opt.srLog=null] 輸入事件紀錄物件，需提供函數info、warn與error，各接收一紀錄物件，供下載FTP檔案與偵測數據變更時紀錄各階段事件，未提供時不進行紀錄，其中warn目前保留未使用，預設之funAdd與funModify略過殘缺檔案時亦經error紀錄，預設null
+ * @param {Boolean} [opt.useShowLog=true] 輸入是否於偵測數據變更過程將錯誤與取消訊息輸出至console布林值，下載FTP檔案階段本身不輸出至console，惟其錯誤往上拋出後仍受此設定影響，預設之funAdd與funModify略過殘缺檔案時亦依此設定輸出一行至console，預設true
  * @returns {Object} 回傳事件物件，可呼叫函數on監聽change事件
  * @example
  *
@@ -254,6 +263,61 @@ let WDwdataTweqmp = async(st, opt = {}) => {
     }
     timeToleranceRemove = cdbl(timeToleranceRemove)
 
+    //ev, 於WDwdataFtp回傳後指派, 供略過殘缺檔案時發送change事件(funAdd與funModify由排程器延遲啟動, 呼叫時ev必已指派)
+    let ev = null
+
+    //logSkip, 殘缺檔案之略過紀錄, 與偵測階段之錯誤同樣經change事件(type為error)與srLog.error通知, useShowLog為true時另輸出至console
+    let logSkip = (event, v, msg) => {
+        let o = { event, id: v.id, msg }
+
+        //safeCall, 各紀錄通道各自隔離, 同步拋錯與回傳之Promise被reject皆不處理, 紀錄失敗(如使用端srLog.error拋錯)不得影響略過流程, 否則殘檔仍會使本輪中止
+        let safeCall = (fn) => {
+            try {
+                let q = fn()
+                if (ispm(q)) {
+                    q.catch(() => {})
+                }
+            }
+            catch (err) {
+                //紀錄通道失敗不處理
+            }
+        }
+
+        if (useShowLog) {
+            safeCall(() => {
+                console.log(`${event} id[${v.id}] ${msg}`)
+            })
+        }
+        if (isfun(get(srLog, 'error'))) {
+            safeCall(() => {
+                return srLog.error({ ...o })
+            })
+        }
+        if (ev !== null) {
+            safeCall(() => {
+                ev.emit('change', { type: 'error', ...o })
+            })
+        }
+    }
+
+    //readAndParse, 讀取新下載檔案並解析, 須先於任何寫入或清空結果資料夾之前執行, 殘缺時回傳null(已記錄, 不拋錯, 不動既有結果)
+    let readAndParse = (v, event) => {
+
+        //readFileSync
+        let fpSrc = `${fdDwStorageTemp}/${v.id}` //新下載檔案存放於fdDwStorageTemp, v.id為數據檔名
+        let c = fs.readFileSync(fpSrc, 'utf8')
+
+        //checkData, 傳輸中斷之殘檔須略過, 否則parseData之id為'Invalid Date'或缺測站卻被當成完整數據
+        let r = checkData(c)
+        if (!r.ok) {
+            logSkip(event, v, r.msg)
+            return null
+        }
+
+        //parseData
+        return parseData(c)
+    }
+
     //funRemoveDef
     let funRemoveDef = async(v) => {
 
@@ -270,18 +334,17 @@ let WDwdataTweqmp = async(st, opt = {}) => {
     //funAddDef
     let funAddDef = async(v) => {
 
+        //readAndParse, 先解析再動結果資料夾
+        let eq = readAndParse(v, 'proc-add-check-data')
+        if (eq === null) {
+            return
+        }
+
         let fd = `${fdResult}/${v.id}` //使用v.id做為資料夾名
         if (!fsIsFolder(fd)) {
             fsCreateFolder(fd)
         }
         fsCleanFolder(fd)
-
-        //readFileSync
-        let fpSrc = `${fdDwStorageTemp}/${v.id}` //新下載檔案存放於fdDwStorageTemp, v.id為數據檔名
-        let c = fs.readFileSync(fpSrc, 'utf8')
-
-        //parseData
-        let eq = parseData(c)
 
         //writeFileSync
         let fpTar = `${fd}/${eq.id}.json` //使用eq.id做為檔名
@@ -294,6 +357,12 @@ let WDwdataTweqmp = async(st, opt = {}) => {
 
     //funModifyDef
     let funModifyDef = async(v) => {
+
+        //readAndParse, 先解析再動結果資料夾, 殘缺時保留既有結果
+        let eq = readAndParse(v, 'proc-diff-check-data')
+        if (eq === null) {
+            return
+        }
 
         //複製舊資料夾(含檔案)至fdResultTemp做暫時備份, fdResultTemp會於funAfterStart清空, 於funBeforeEnd刪除
         if (true) {
@@ -312,13 +381,6 @@ let WDwdataTweqmp = async(st, opt = {}) => {
                 fsCreateFolder(fd)
             }
             fsCleanFolder(fd)
-
-            //readFileSync
-            let fpSrc = `${fdDwStorageTemp}/${v.id}` //新下載檔案存放於fdDwStorageTemp, v.id為數據檔名
-            let c = fs.readFileSync(fpSrc, 'utf8')
-
-            //parseData
-            let eq = parseData(c)
 
             //writeFileSync
             let fpTar = `${fd}/${eq.id}.json` //使用eq.id做為檔名
@@ -364,7 +426,7 @@ let WDwdataTweqmp = async(st, opt = {}) => {
         srLog,
         useShowLog,
     }
-    let ev = await WDwdataFtp(st, optFtp)
+    ev = await WDwdataFtp(st, optFtp)
 
     return ev
 }
